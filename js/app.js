@@ -26,45 +26,47 @@ var allCharacters = [
   new newChar('John Belushi', '---', ['On stage is the only place where I really know what I\'m doing.', 'I\'m John Belushi!'], ['Nothing is over until we decide it is! Was it over when the Germans bombed Pearl Harbor? Hell, no!', 'Wise Up!', 'I suggest you go out and buy as many Blues albums as you can.'], ['I owe it all to little chocolate donuts.', 'Christ, seven years of college, down the drain.'])
 ];
 
-var cardImagePaths = [''];
+var cardImagePaths = [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13];
 var cardValues =      [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13];
 
-var charIndex = localStorage.get();
+// var charIndex = localStorage.get();
+var charIndex = 1; //Temporary variable
 
 function cards(cardImagePaths,cardValues) {
   this.cardImagePaths = cardImagePaths;
   this.cardValues = cardValues;
 }
 
-var textID = "id of html text area";
-var imageID = "id of html card image area";
-var flipID = "id of html card flip image area";
-var opponentInsult = "pick of opponent insult";
-var pathToDeckOfCardImage = "image of deck of cards";
-var cardArrayLength = "length of array of cards";
-var pathToFlipCardImage = "array of card image paths";
-var arrayOfCardValues = "array of card values";
-var soberQuote = 'sober quote message';
-var newCardValue = 'randomly generated new card value';
-var oldCardValue = 'randomly generated value of old card';
-var cryOfDismay = 'cry of dismay';
-var opponentImageID = 'id of opponent image area';
-var totalComputerDrinks = 'total number of computer drinks';
-var gameplayDivId = 'id for div containing card image space';
-var totalUserDrinks = 'total number of computer drinks';
-var highButtonID = 'button ID of HIGH button';
-var lowButtonID = 'button ID of low button';
-var passButtonID = 'button id for pass button';
-var opponentDrinking = 'image path to opponent drinking';
+// var textID = "id of html text area";
+// var imageID = "id of html card image area";
+// var flipID = "id of html card flip image area";
+// var opponentInsult = "pick of opponent insult";
+// var pathToDeckOfCardImage = "image of deck of cards";
+// var cardArrayLength = "length of array of cards";
+// var pathToFlipCardImage = "array of card image paths";
+// var arrayOfCardValues = "array of card values";
+// var soberQuote = 'sober quote message';
+// var newCardValue = 'randomly generated new card value';
+// var oldCardValue = 'randomly generated value of old card';
+// var cryOfDismay = 'cry of dismay';
+// var opponentImageID = 'id of opponent image area';
+// var totalComputerDrinks = 'total number of computer drinks';
+// var gameplayDivId = 'id for div containing card image space';
+// var totalUserDrinks = 'total number of computer drinks';
+// var highButtonID = 'button ID of HIGH button';
+// var lowButtonID = 'button ID of low button';
+// var passButtonID = 'button id for pass button';
+// var opponentDrinking = 'image path to opponent drinking';
 
 
 var computerCardValue = 0;
+var totalComputerDrinks = 0;
 var totalComputerPicks = 0;
 var computerPick = 0;
 var oldCardValue = 0;
 var newCardValue = 0;
 var userCardValue = 0;
-var totalUserPicks = 0;
+var totalUserDrinks = 0;
 var userPick = 0;
 var numberOfPicks = 0;
 
@@ -72,23 +74,27 @@ var cardData = new cards(cardImagePaths,cardValues);
 
 function computerSober () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].soberQuotes.length));
-  textID.textContent = allCharacters[charIndex].soberQuotes[quoteIndex];
+  console.log(allCharacters[charIndex].soberQuotes[quoteIndex]);
+  // textID.textContent = allCharacters[charIndex].soberQuotes[quoteIndex];
 }
 
 function computerInsult () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].insults.length));
-  textID.textContent = allCharacters[charIndex].insults[quoteIndex];
+  console.log(allCharacters[charIndex].insults[quoteIndex]);
+  // textID.textContent = allCharacters[charIndex].insults[quoteIndex];
 }
 
 function computerWinLose () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].winLose.length));
-  textID.textContent = allCharacters[charIndex].winLose[quoteIndex];
+  console.log(allCharacters[charIndex].winLose[quoteIndex]);
+  // textID.textContent = allCharacters[charIndex].winLose[quoteIndex];
 }
 
 function randomCardGenerator() {
   var randomIndex = Math.floor(Math.random() * (cardData.cardValues.length));
-  imageID.src = cardData.cardImagePaths[randomIndex];
+  // imageID.src = cardData.cardImagePaths[randomIndex];
   newCardValue = cardData.cardValues[randomIndex];
+  console.log('The new card value is ' + newCardValue);
   cardData.cardImagePaths.splice(randomIndex,1);
   cardData.cardValues.splice(randomIndex,1);
   numberOfPicks += 1;
@@ -100,12 +106,13 @@ function randomCardGenerator() {
 
 function userIntro() {
   computerInsult();
-  imageID.src = pathToDeckOfCardImage;
+  // imageID.src = pathToDeckOfCardImage;
   randomCardGenerator();
-  textID.textContent = "Will the next card be higher or lower than the card shown?";
+  // textID.textContent = "Will the next card be higher or lower than the card shown?";
+  console.log("Will the next card be higher or lower than the card shown?");
   oldCardValue = newCardValue;
-  userPick();
 }
+userIntro();
 
 highButtonID.addEventListener('click',userHighPick);
 lowButtonID.addEventListener('click',userLowPick);
@@ -117,7 +124,8 @@ function userHighPick () {
   if (newCardValue <= oldCardValue) {
     userIncorrectPick();
   } else {
-    textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
+    console.log('YOU ARE CORRECT, PICK AGAIN');
+    // textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
   }
 }
 
@@ -127,41 +135,47 @@ function userLowPick () {
   if (newCardValue >= oldCardValue) {
     userIncorrectPick();
   } else {
-    textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
+    console.log('YOU ARE CORRECT, PICK AGAIN');
+    // textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
   }
 }
 
 function userPassPick () {
-  textID.textContent = 'PASS TO ME';
+  console.log('PASS TO ME');
+  // textID.textContent = 'PASS TO ME';
   computerIntro();
 }
 
 function userIncorrectPick() {
-  textID.textContent = 'DRINK!!';
-  opponentImageID.src = opponentDrinking;
+  // textID.textContent = 'DRINK!!';
+  // opponentImageID.src = opponentDrinking;
   totalUserDrinks += 1;
-  gameplayDivId.innerHTML = '';
+  console.log('The total user drinks are ' + totalUserDrinks);
+  // gameplayDivId.innerHTML = '';
   computerIntro();
 }
-
-// function handleOnHighButton(event){
 
 function computerChoice () {
   if (totalComputerPicks === 0) {
     computerPick = Math.floor(Math.random() * (2)) + 1;
+    console.log('The computer choice is ' + computerPick);
+    totalComputerPicks += 1;
   } else {
     computerPick = Math.floor(Math.random() * (3)) + 1;
+    console.log('The computer choice is ' + computerPick);
+    totalComputerPicks += 1;
   }
 }
 
 function computerIntro () {
+  totalComputerPicks = 0;
   computerInsult();
   randomCardGenerator();
-  imageID.src = pathToDeckOfCardImage;
-  computerPick();
+  // imageID.src = pathToDeckOfCardImage;
+  computerPicker();
 }
 
-function computerPick () {
+function computerPicker () {
   computerSober();
   computerChoice();
   if (computerPick === 1 || computerPick === 2) {
@@ -178,23 +192,24 @@ function computerNewCard () {
     if (newCardValue <= oldCardValue) {
       computerIncorrectPick();
     } else {
-      computerPick();
+      computerPicker();
     }
   }
   if (computerPick === 2) {
     if (newCardValue >= oldCardValue) {
       computerIncorrectPick();
     } else {
-      computerPick();
+      computerPicker();
     }
   }
 }
 
 function computerIncorrectPick () {
   computerWinLose();
-  opponentImageID.src = opponentDrinking;
+  // opponentImageID.src = opponentDrinking;
   totalComputerDrinks += 1;
-  gameplayDivId.src = '';
+  console.log('The total computer drinks are ' + totalComputerDrinks);
+  // gameplayDivId.src = '';
   userIntro();
 
 }
