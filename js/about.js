@@ -9,5 +9,10 @@ marsFlip.addEventListener('click', flip);
 kyleFlip.addEventListener('click', flip);
 
 function flip() {
+  imgSwitch();
   console.log('The click has been received!');
 }
+
+function imgSwitch() {
+  
+};
