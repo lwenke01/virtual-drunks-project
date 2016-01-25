@@ -1,0 +1,213 @@
+
+.slogan {
+text-align: center;
+padding: 0;
+margin: 0;
+background: repeating-radial-gradient(
+  circle,
+  purple,
+  purple 10px,
+  #4b026f 10px,
+  #4b026f 20px
+);
+}
+
+body {
+background-color: blue;
+}
+nav {
+background-color: red;
+}
+h2 {
+  text-align: center;
+}
+p {
+font-size: 133%
+}
+
+.navbar li {
+  display: inline-block;
+  width: 33%;
+
+}
+
+.checkbox-grid li {
+    display: inline-block;
+
+    width: 10%;
+}
+.checkbox-option2 li {
+    display: inline-block;
+
+    width: 20%;
+}
+li {
+list-style-type: none;
+}
+
+.buttoncenter {
+  text-align: center;
+}
+/*
+below is tye slider style for drinks*/
+
+.switch {
+  position: relative;
+  width: 37rem;
+  padding: 0 1rem;
+  font-family: verdana;
+}
+.switch:before {
+  content: '  ';
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 3rem;
+  background: #000;
+  border-radius: 30px;
+}
+.switch__label {
+  display: inline-block;
+  width: rem;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: color 200ms ease-out;
+}
+.switch__label:hover {
+  color: white;
+}
+.switch__indicator {
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  top: -.5rem;
+  left: 0;
+  background: blue;
+  border-radius: 50%;
+  transition: transform 600ms cubic-bezier(0.02, 0.94, 0.09, 0.97), background 300ms cubic-bezier(0.17, 0.67, 0.14, 1.03);
+  transform: translate3d(15rem, 0, 0);
+}
+.switch input#one:checked ~ .switch__indicator {
+  background: PaleGreen;
+  transform: translate3d(1.2rem, 0, 0);
+}
+.switch input#two:checked ~ .switch__indicator {
+  background: MediumTurquoise;
+  transform: translate3d(5.5rem, 0, 0);
+}
+.switch input#three:checked ~ .switch__indicator {
+  background: PaleVioletRed;
+  transform: translate3d(10.6rem, 0, 0);
+}
+.switch input#four:checked ~ .switch__indicator {
+  background: PaleVioletRed;
+  transform: translate3d(16.6rem, 0, 0);
+}
+.switch input#five:checked ~ .switch__indicator {
+  background: PaleVioletRed;
+  transform: translate3d(22.5rem, 0, 0);
+}
+.switch input#six:checked ~ .switch__indicator {
+  background: PaleVioletRed;
+  transform: translate3d(31rem, 0, 0);
+}
+.switch input#seven:checked ~ .switch__indicator {
+  background: PaleVioletRed;
+  transform: translate3d(1.2rem, 0, 0);
+}
+.switch input#eight:checked ~ .switch__indicator {
+  background: PaleVioletRed;
+  transform: translate3d(5.5rem, 0, 0);
+}
+
+
+.switch input[type="radio"]:not(:checked), .switch input[type="radio"]:checked {
+  display: none;
+}
+
+body {
+  background: #333;
+  color: #999;
+}
+
+
+
+/*
+below is for the styling of are you 21 radio*/
+
+form {
+    margin: auto;
+    position: absolute;
+    top: -40%; right: -50; bottom: 0; left: 0;
+    width: 200px;
+    height: 150px;
+    text-align:center;
+    font-size: 20px;
+}
+form label {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 15px;
+    margin: 30px;
+}
+form input[type=radio] {
+    display: none;
+}
+form label:before, form label:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+form label:before {
+    width: 25px;
+    height: 25px;
+    border: 3px solid #fff;
+    top: -5px;
+    left: 0px;
+    background-color: transparent;
+}
+form label:after {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    top: 3px;
+    left: 8px;
+    opacity: 0;
+}
+form input[type=radio]:checked + label:before {
+    animation: on-bord-battun .3s ease-in-out;
+}
+@keyframes on-bord-battun {
+    0% { /*box-shadow: 0px 0px 0px 12px rgba(255,255,255,0);*/
+         transform: scale(1);}
+    50% { box-shadow: 0px 0px 0px 15px rgba(255,255,255,0.7);
+        transform: scale(0.4);}
+    100% { box-shadow: 0px 0px 0px 12px rgba(255,255,255,0);
+         transform: scale(1);}
+}
+form input[type="radio"]:not(:checked) + label:before {
+    animation: off-bord-battun .3s ease-in-out;
+}
+@keyframes off-bord-battun {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.4); }
+    100% { transform: scale(1); }
+}
+form input[type=radio]:checked + label:after {
+    opacity: 1;
+    animation: on-dot .3s ease-in-out;
+}
+@keyframes on-dot {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+form input[type=radio]:not(:checked) + label:after {
+    animation: off-dot .3s ease-in-out;
+}
+@keyframes off-dot {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}

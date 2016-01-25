@@ -4,8 +4,7 @@
     <header><link rel="stylesheet" href="page1.css" media="screen" title="no title" charset="utf-8">
     </header>
     <h1 class="slogan">LOGO GOES HERE</h1>
-    <h1 class="slogan">Slogan Goes Here Yeehaww
-    </h1>
+    <h1 class="slogan">Drink with a cold one</h1>
     <title></title>
   </head>
   <nav>
@@ -18,21 +17,33 @@
   <body>
     <h2>Welcome to a game of Hi-Low!!!
     </h2>
-    <ul>
-      <li>Are you 21?</li><ul class="checkbox-grid">
-    <li><input type="checkbox" name="text1" value="value1" /><label for="text1">Yes</label></li>
-    <li><input type="checkbox" name="text2" value="value2" /><label for="text2">No</label></li>
-    </ul>
-      <li>What is your name?</li><input type="text" size="15" name="name" value="">
-      <li>Pick your poison</li><ul class="checkbox-grid">
-    <li><input type="checkbox" name="text3" value="value3" /><label for="text3">Beer</label></li>
-    <li><input type="checkbox" name="text4" value="value4" /><label for="text4">Wine</label></li>
-    <li><input type="checkbox" name="text5" value="value5" /><label for="text5">Shots!</label></li>
-    <li><input type="checkbox" name="text6" value="value6" /><label for="text6">Wine Cooler</label></li>
-    <li><input type="checkbox" name="text7" value="value7" /><label for="text7">Cider</label></li>
-    <li><input type="checkbox" name="text8" value="value8" /><label for="text8">Kool-aid</label></li>
-    </ul>
-      <li>Pick your partner</li>
+  <form action="#">
+    <p>Are you 21?</p>
+    <input id="male" type="radio" name="gender" value="male" />
+    <label for="male">YES</label>
+    <input id="female" type="radio" name="gender" value="female" />
+    <label for="female">NO</label>
+</form>
+<br><br><br><br><br><br><br><br><br>
+
+      <p>What is your name?</p><input type="text" size="15" name="name" value="">
+      <p>Pick your poison</p> <div class="switch">
+  <input name="switch" id="one" type="radio" checked/>
+  <label for="one" class="switch__label">Beer</label>
+  <input name="switch" id="two" type="radio" />
+  <label for="two" class="switch__label">Wine</label>
+  <input name="switch" id="three" type="radio" />
+  <label for="three" class="switch__label" >Shots</label>
+    <input name="switch" id="four" type="radio" />
+  <label for="four" class="switch__label">Cider</label>
+  <input name="switch" id="four" type="radio" />
+  <label for="five" class="switch__label">Wine-cooler</label>
+  <input name="switch" id="five" type="radio" />
+  <label for="six" class="switch__label">Wine-cooler</label>
+  <input name="switch" id="six" type="radio" />
+  <div class="switch__indicator" /></div>
+</div>
+      <p>Pick your partner</p>
       <ul class="checkbox-option2">
     <li><input type="checkbox" name="text9" value="value9" /><label for="text9">Sigmund Frued</label></li>
     <li><input type="checkbox" name="text10" value="value10" /><label for="text10">Able Lincoin</label></li>
