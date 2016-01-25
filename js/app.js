@@ -9,7 +9,7 @@ function newChar(name, path, soberQuotes, insults, winLose) {
 }
 
 var allCharacters = [
-  new newChar('Abe Lincoln', '---', ['Nearly all people can stand adversity, but if you want to test someones character, get them drunk.', 'This will be over before you can say, "Sic semper tyrannis"!'], ['Four score and seventy years years ago, I was drinking your great grandfather\'s ass under the table', 'I destroy my enemies when I make them my friends.'], ['placeholder', 'placeholder']),
+  new newChar('Abe Lincoln', '---', ['Nearly all people can stand adversity, but if you want to test someones character, get them drunk.', 'This will be over before you can say, "Sic semper tyrannis"!','It is not best to swap horses while crossing the river.'], ['Four score and seventy years years ago, I was drinking your great grandfather\'s ass under the table', 'I destroy my enemies when I make them my friends.'], ['placeholder', 'placeholder']),
 
   new newChar('Genghis Khan', '---', ['I am the punishment of God...If you had not committed great sins, God would not have sent a punishment like me upon you.'], ['I am the flail of god. Had you not created great sins, god would not have sent a punishment like me upon you.', 'A man\'s greatest joy is crushing his enemies.'], ['There is no value in anything until it is finished.']),
 
@@ -27,7 +27,7 @@ var allCharacters = [
 ];
 
 // var charIndex = localStorage.get();
-var charIndex = 1; //Temporary variable
+var charIndex = 0; //Temporary variable
 
 var cardData = {
   cardImagePath: [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13],
@@ -66,6 +66,7 @@ var userCardValue = 0;
 var totalUserDrinks = 0;
 var userPick = 0;
 var numberOfPicks = 0;
+var tempDrinks = 0;
 
 function computerSober () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].soberQuotes.length));
@@ -93,6 +94,7 @@ function randomCardGenerator() {
   cardData.cardImagePath.splice(randomIndex,1);
   cardData.cardValue.splice(randomIndex,1);
   numberOfPicks += 1;
+  tempDrinks += 1;
   console.log('The number of picks are ' + numberOfPicks);
   if (numberOfPicks > 51) {
     cardData = {
@@ -156,7 +158,8 @@ function userPassPick () {
 function userIncorrectPick() {
   // textID.textContent = 'DRINK!!';
   // opponentImageID.src = opponentDrinking;
-  totalUserDrinks += 1;
+  totalUserDrinks += tempDrinks;
+  tempDrinks = 0;
   console.log('The total user drinks are ' + totalUserDrinks);
   // gameplayDivId.innerHTML = '';
   computerIntroNonRandom();
@@ -228,7 +231,8 @@ function computerNewCard () {
 function computerIncorrectPick () {
   computerWinLose();
   // opponentImageID.src = opponentDrinking;
-  totalComputerDrinks += 1;
+  totalComputerDrinks += tempDrinks;
+  tempDrinks = 0;
   console.log('The total computer drinks are ' + totalComputerDrinks);
   // gameplayDivId.src = '';
   userIntroNonRandom();
