@@ -26,16 +26,13 @@ var allCharacters = [
   new newChar('John Belushi', '---', ['On stage is the only place where I really know what I\'m doing.', 'I\'m John Belushi!'], ['Nothing is over until we decide it is! Was it over when the Germans bombed Pearl Harbor? Hell, no!', 'Wise Up!', 'I suggest you go out and buy as many Blues albums as you can.'], ['I owe it all to little chocolate donuts.', 'Christ, seven years of college, down the drain.'])
 ];
 
-var cardImagePaths = [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13];
-var cardValues =      [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13];
-
 // var charIndex = localStorage.get();
 var charIndex = 1; //Temporary variable
 
-function cards(cardImagePaths,cardValues) {
-  this.cardImagePaths = cardImagePaths;
-  this.cardValues = cardValues;
-}
+var cardData = {
+  cardImagePath: [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13],
+  cardValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13]
+};
 
 // var textID = "id of html text area";
 // var imageID = "id of html card image area";
@@ -70,8 +67,6 @@ var totalUserDrinks = 0;
 var userPick = 0;
 var numberOfPicks = 0;
 
-var cardData = new cards(cardImagePaths,cardValues);
-
 function computerSober () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].soberQuotes.length));
   console.log(allCharacters[charIndex].soberQuotes[quoteIndex]);
@@ -91,15 +86,19 @@ function computerWinLose () {
 }
 
 function randomCardGenerator() {
-  var randomIndex = Math.floor(Math.random() * (cardData.cardValues.length));
+  var randomIndex = Math.floor(Math.random() * (cardData.cardValue.length));
   // imageID.src = cardData.cardImagePaths[randomIndex];
-  newCardValue = cardData.cardValues[randomIndex];
+  newCardValue = cardData.cardValue[randomIndex];
   console.log('The new card value is ' + newCardValue);
-  cardData.cardImagePaths.splice(randomIndex,1);
-  cardData.cardValues.splice(randomIndex,1);
+  cardData.cardImagePath.splice(randomIndex,1);
+  cardData.cardValue.splice(randomIndex,1);
   numberOfPicks += 1;
+  console.log('The number of picks are ' + numberOfPicks);
   if (numberOfPicks > 51) {
-    cardData = new cards(cardImagePaths,cardValues);
+    cardData = {
+      cardImagePath: [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13],
+      cardValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13]
+    };
     numberOfPicks = 0;
     }
 }
@@ -113,6 +112,14 @@ function userIntro() {
   oldCardValue = newCardValue;
 }
 userIntro();
+
+function userIntroNonRandom() {
+  computerInsult();
+  // imageID.src = pathToDeckOfCardImage;
+  // textID.textContent = "Will the next card be higher or lower than the card shown?";
+  console.log("Will the next card be higher or lower than the card shown?");
+  oldCardValue = newCardValue;
+}
 
 highButtonID.addEventListener('click',userHighPick);
 lowButtonID.addEventListener('click',userLowPick);
@@ -143,7 +150,7 @@ function userLowPick () {
 function userPassPick () {
   console.log('PASS TO ME');
   // textID.textContent = 'PASS TO ME';
-  computerIntro();
+  computerPassIntro();
 }
 
 function userIncorrectPick() {
@@ -152,7 +159,7 @@ function userIncorrectPick() {
   totalUserDrinks += 1;
   console.log('The total user drinks are ' + totalUserDrinks);
   // gameplayDivId.innerHTML = '';
-  computerIntro();
+  computerIntroNonRandom();
 }
 
 function computerChoice () {
@@ -175,6 +182,20 @@ function computerIntro () {
   computerPicker();
 }
 
+function computerIntroNonRandom () {
+  totalComputerPicks = 0;
+  computerInsult();
+  // imageID.src = pathToDeckOfCardImage;
+  computerPicker();
+}
+
+function computerPassIntro () {
+  totalComputerPicks = 0;
+  computerInsult();
+  // imageID.src = pathToDeckOfCardImage;
+  computerPicker();
+}
+
 function computerPicker () {
   computerSober();
   computerChoice();
@@ -182,7 +203,7 @@ function computerPicker () {
     oldCardValue = newCardValue;
     computerNewCard();
   } else {
-    userIntro();
+    userIntroNonRandom();
   }
 }
 
@@ -210,6 +231,6 @@ function computerIncorrectPick () {
   totalComputerDrinks += 1;
   console.log('The total computer drinks are ' + totalComputerDrinks);
   // gameplayDivId.src = '';
-  userIntro();
+  userIntroNonRandom();
 
 }
