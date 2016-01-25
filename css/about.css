@@ -1,5 +1,9 @@
-/*empty for now*/
 
-h1 {
+.logo {
+  display: flex;
+  justify-content: center;
+}
 
+body {
+  background-color: black;
 }
