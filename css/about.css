@@ -1,9 +1,50 @@
 
-.logo {
+header {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  background-color: blue;
 }
 
-body {
-  background-color: black;
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+h2 {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: orange;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: purple;
+}
+
+img {
+  width: 15%;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+}
+
+p {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: gold;
 }
