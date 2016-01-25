@@ -1,4 +1,12 @@
-// 'use strict'
+// 'use strict';
+
+function newChar(name, path, soberQuotes, insults, winLose) {
+  this.name = name;
+  this.path = path;
+  this.soberQuotes = soberQuotes;
+  this.insults = insults;
+  this.winLose = winLose;
+}
 
 var allCharacters = [
   new newChar('Abe Lincoln', '---', ['Nearly all people can stand adversity, but if you want to test someones character, get them drunk.', 'This will be over before you can say, "Sic semper tyrannis"!'], ['Four score and seventy years years ago, I was drinking your great grandfather\'s ass under the table', 'I destroy my enemies when I make them my friends.'], ['placeholder', 'placeholder']),
@@ -18,15 +26,10 @@ var allCharacters = [
   new newChar('John Belushi', '---', ['On stage is the only place where I really know what I\'m doing.', 'I\'m John Belushi!'], ['Nothing is over until we decide it is! Was it over when the Germans bombed Pearl Harbor? Hell, no!', 'Wise Up!', 'I suggest you go out and buy as many Blues albums as you can.'], ['I owe it all to little chocolate donuts.', 'Christ, seven years of college, down the drain.'])
 ];
 
-function newChar(name, path, soberQuotes, insults, winLose) {
-  this.name = name;
-  this.path = path;
-  this.soberQuotes = soberQuotes;
-  this.insults = insults;
-  this.winLose = winLose;
-}
-var cardImagePaths = ['aaa'];
-var cardValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+var cardImagePaths = [''];
+var cardValues =      [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13];
+
+var charIndex = localStorage.get();
 
 function cards(cardImagePaths,cardValues) {
   this.cardImagePaths = cardImagePaths;
@@ -49,15 +52,15 @@ var opponentImageID = 'id of opponent image area';
 var totalComputerDrinks = 'total number of computer drinks';
 var gameplayDivId = 'id for div containing card image space';
 var totalUserDrinks = 'total number of computer drinks';
-var highButtonId = 'button ID of HIGH button';
-var lowButtonId = 'button ID of low button';
-var passButtonId = 'button id for pass button';
+var highButtonID = 'button ID of HIGH button';
+var lowButtonID = 'button ID of low button';
+var passButtonID = 'button id for pass button';
+var opponentDrinking = 'image path to opponent drinking';
 
 
 var computerCardValue = 0;
 var totalComputerPicks = 0;
 var computerPick = 0;
-var randomCardIndex = 0;
 var oldCardValue = 0;
 var newCardValue = 0;
 var userCardValue = 0;
@@ -67,12 +70,27 @@ var numberOfPicks = 0;
 
 var cardData = new cards(cardImagePaths,cardValues);
 
+function computerSober () {
+  var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].soberQuotes.length));
+  textID.textContent = allCharacters[charIndex].soberQuotes[quoteIndex];
+}
+
+function computerInsult () {
+  var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].insults.length));
+  textID.textContent = allCharacters[charIndex].insults[quoteIndex];
+}
+
+function computerWinLose () {
+  var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].winLose.length));
+  textID.textContent = allCharacters[charIndex].winLose[quoteIndex];
+}
+
 function randomCardGenerator() {
-  var randomIndex = Math.floor(math.random() * (cardData.cardValues.length));
-  //DISPLAY RANDOM CARD HERE//
+  var randomIndex = Math.floor(Math.random() * (cardData.cardValues.length));
+  imageID.src = cardData.cardImagePaths[randomIndex];
   newCardValue = cardData.cardValues[randomIndex];
-  cardArrayLength.splice(randomIndex,1);
-  arrayOfCardValues.splice(randomIndex,1);
+  cardData.cardImagePaths.splice(randomIndex,1);
+  cardData.cardValues.splice(randomIndex,1);
   numberOfPicks += 1;
   if (numberOfPicks > 51) {
     cardData = new cards(cardImagePaths,cardValues);
@@ -81,7 +99,7 @@ function randomCardGenerator() {
 }
 
 function userIntro() {
-  textID.textContent = "TAUNT FROM OPPONENT";
+  computerInsult();
   imageID.src = pathToDeckOfCardImage;
   randomCardGenerator();
   textID.textContent = "Will the next card be higher or lower than the card shown?";
@@ -91,7 +109,7 @@ function userIntro() {
 
 highButtonID.addEventListener('click',userHighPick);
 lowButtonID.addEventListener('click',userLowPick);
-passButtonId.addEventListener('click',computerIntro);
+passButtonID.addEventListener('click',userPassPick);
 
 function userHighPick () {
   oldCardValue = newCardValue;
@@ -113,6 +131,11 @@ function userLowPick () {
   }
 }
 
+function userPassPick () {
+  textID.textContent = 'PASS TO ME';
+  computerIntro();
+}
+
 function userIncorrectPick() {
   textID.textContent = 'DRINK!!';
   opponentImageID.src = opponentDrinking;
@@ -132,14 +155,14 @@ function computerChoice () {
 }
 
 function computerIntro () {
-  textID.textContent = opponentInsult;
+  computerInsult();
   randomCardGenerator();
   imageID.src = pathToDeckOfCardImage;
   computerPick();
 }
 
 function computerPick () {
-  textID.textContent = soberQuote;
+  computerSober();
   computerChoice();
   if (computerPick === 1 || computerPick === 2) {
     oldCardValue = newCardValue;
@@ -168,7 +191,7 @@ function computerNewCard () {
 }
 
 function computerIncorrectPick () {
-  textID.textContent = cryOfDismay;
+  computerWinLose();
   opponentImageID.src = opponentDrinking;
   totalComputerDrinks += 1;
   gameplayDivId.src = '';
