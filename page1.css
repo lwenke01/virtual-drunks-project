@@ -1,0 +1,33 @@
+
+.slogan {
+text-align: center;
+padding: 0;
+margin: 0;
+background: repeating-radial-gradient(
+  circle,
+  purple,
+  purple 10px,
+  #4b026f 10px,
+  #4b026f 20px
+);
+}
+
+.navbar li {
+  display: inline-block;
+  width: 33%;
+}
+
+.checkbox-grid li {
+    display: inline-block;
+
+    width: 10%;
+}
+.checkbox-option2 li {
+    display: inline-block;
+
+    width: 20%;
+}
+
+.buttoncenter {
+  text-align: center;
+}
