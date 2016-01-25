@@ -24,22 +24,18 @@ nav {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   background-color: purple;
 }
 
 img {
   width: 15%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 section {
   display: flex;
   justify-content: space-around;
-}
-
-p {
-  display: flex;
-  justify-content: flex-end;
 }
 
 footer {
