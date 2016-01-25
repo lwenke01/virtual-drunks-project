@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 
 var allCharacters = [
   new newChar('Abe Lincoln', '---', ['Nearly all people can stand adversity, but if you want to test someones character, get them drunk.', 'This will be over before you can say, "Sic semper tyrannis"!'], ['Four score and seventy years years ago, I was drinking your great grandfather\'s ass under the table', 'I destroy my enemies when I make them my friends.'], ['placeholder', 'placeholder']),
@@ -18,6 +18,21 @@ var allCharacters = [
   new newChar('John Belushi', '---', ['On stage is the only place where I really know what I\'m doing.', 'I\'m John Belushi!'], ['Nothing is over until we decide it is! Was it over when the Germans bombed Pearl Harbor? Hell, no!', 'Wise Up!', 'I suggest you go out and buy as many Blues albums as you can.'], ['I owe it all to little chocolate donuts.', 'Christ, seven years of college, down the drain.'])
 ];
 
+function newChar(name, path, soberQuotes, insults, winLose) {
+  this.name = name;
+  this.path = path;
+  this.soberQuotes = soberQuotes;
+  this.insults = insults;
+  this.winLose = winLose;
+}
+var cardImagePaths = ['aaa'];
+var cardValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+function cards(cardImagePaths,cardValues) {
+  this.cardImagePaths = cardImagePaths;
+  this.cardValues = cardValues;
+}
+
 var textID = "id of html text area";
 var imageID = "id of html card image area";
 var flipID = "id of html card flip image area";
@@ -34,6 +49,9 @@ var opponentImageID = 'id of opponent image area';
 var totalComputerDrinks = 'total number of computer drinks';
 var gameplayDivId = 'id for div containing card image space';
 var totalUserDrinks = 'total number of computer drinks';
+var highButtonId = 'button ID of HIGH button';
+var lowButtonId = 'button ID of low button';
+var passButtonId = 'button id for pass button';
 
 
 var computerCardValue = 0;
@@ -45,60 +63,56 @@ var newCardValue = 0;
 var userCardValue = 0;
 var totalUserPicks = 0;
 var userPick = 0;
-numberOfPicks = 0;
-//random card
+var numberOfPicks = 0;
+
+var cardData = new cards(cardImagePaths,cardValues);
+
 function randomCardGenerator() {
-  var randomIndex = Math.floor(math.random() * (cardArrayLength));
+  var randomIndex = Math.floor(math.random() * (cardData.cardValues.length));
+  //DISPLAY RANDOM CARD HERE//
+  newCardValue = cardData.cardValues[randomIndex];
   cardArrayLength.splice(randomIndex,1);
   arrayOfCardValues.splice(randomIndex,1);
   numberOfPicks += 1;
   if (numberOfPicks > 51) {
-    cards = new CardGenerator(cardArrayLength, arrayOfCardValues);
+    cardData = new cards(cardImagePaths,cardValues);
     numberOfPicks = 0;
     }
 }
 
-function userChoice() {
-  if totalUserPicks === 0 {
-    userPick = Math.floor(Math.random() * (2)) + 1;
-} else {
-    userPick = Math.floor(Math.random() * (3)) + 1;
-  }
-}
-
 function userIntro() {
-  imgID.src = pathToDeckOfCardImage;
+  textID.textContent = "TAUNT FROM OPPONENT";
+  imageID.src = pathToDeckOfCardImage;
   randomCardGenerator();
-  newCardValue = oldCardValue;
+  textID.textContent = "Will the next card be higher or lower than the card shown?";
+  oldCardValue = newCardValue;
   userPick();
 }
 
-function userPick() {
-  userChoice();
-  if(userPick === 1 || userPick ====2){
-    userNewCard();
+highButtonID.addEventListener('click',userHighPick);
+lowButtonID.addEventListener('click',userLowPick);
+passButtonId.addEventListener('click',computerIntro);
+
+function userHighPick () {
+  oldCardValue = newCardValue;
+  randomCardGenerator();
+  if (newCardValue <= oldCardValue) {
+    userIncorrectPick();
   } else {
-    computerIntro();
+    textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
   }
 }
 
-function userNewCard() {
+function userLowPick () {
+  oldCardValue = newCardValue;
   randomCardGenerator();
-  if(userPick === 1) {
-    if(newCardValue <= oldCardValue) {
-      userIncorrectPick();
-    } else {
-      userPick();
-    }
-  }
-  if(userPick === 2) {
-    if(newCardValue >= oldCardValue) {
-      userIncorrectPick();
-    } else {
-      userPick();
-    }
+  if (newCardValue >= oldCardValue) {
+    userIncorrectPick();
+  } else {
+    textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
   }
 }
+
 function userIncorrectPick() {
   textID.textContent = 'DRINK!!';
   opponentImageID.src = opponentDrinking;
@@ -107,23 +121,7 @@ function userIncorrectPick() {
   computerIntro();
 }
 
-// high/low buttons
-
-
-highButton.addEventListener('click',handleOnHighButton);
-lowButton.addEventListener('click',handleOnLowButton);
-
-
-function handleOnHighButton(event){
-
-
-function newChar(name, path, soberQuotes, insults, winLose) {
-  this.name = name;
-  this.path = path;
-  this.soberQuotes = soberQuotes;
-  this.insults = insults;
-  this.winLose = winLose;
-}
+// function handleOnHighButton(event){
 
 function computerChoice () {
   if (totalComputerPicks === 0) {
