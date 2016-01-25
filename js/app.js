@@ -1,27 +1,5 @@
 // 'use strict'
 
-// var cards {
-//   cardArrayImagePath: [AS,2S,3S,4S......],
-//   cardArrayValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3]
-// };
-//
-// function random(){
-//   randomIndex = Math.floor();
-//   Display the card
-//   store card value
-//   cards.cardArrayImagePath.splice(randomIndex,1);
-//   cards.cardArrayValue.splice(randomIndex,1);
-//   numberOfPicks += 1;
-//   if (number of picks > 51) {
-//     cards = new cardGenerator(cardArrayValue,cardArrayImagePath)
-//     numberOfPicks = 0;
-//   }
-// }
-
-
-var card = new newCard(cardArrayValue[randomIndex],cardArrayImagePath[randomIndex]);
-
-
 var textID = "id of html text area";
 var imageID = "id of html card image area";
 var flipID = "id of html card flip image area";
@@ -43,6 +21,9 @@ var computerCardValue = 0;
 var totalComputerPicks = 0;
 var computerPick = 0;
 var randomCardIndex = 0;
+var oldCardValue = 0;
+var newCardValue = 0;
+
 function computerChoice () {
   if (totalComputerPicks === 0) {
     computerPick = Math.floor(Math.random() * (2)) + 1;
@@ -53,9 +34,8 @@ function computerChoice () {
 
 function computerIntro () {
   textID.textContent = opponentInsult;
-  imageID.src = pathToDeckOfCardImage;
   randomCardGenerator();
-  oldCardValue = newCardValue;
+  imageID.src = pathToDeckOfCardImage;
   computerPick();
 }
 
@@ -63,6 +43,7 @@ function computerPick () {
   textID.textContent = soberQuote;
   computerChoice();
   if (computerPick === 1 || computerPick === 2) {
+    oldCardValue = newCardValue;
     computerNewCard();
   } else {
     userIntro();
@@ -91,6 +72,6 @@ function computerIncorrectPick () {
   textID.textContent = cryOfDismay;
   opponentImageID.src = opponentDrinking;
   totalComputerDrinks += 1;
-  gameplayDivId.innerHTML = '';
+  gameplayDivId.src = '';
   userIntro();
 }
