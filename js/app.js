@@ -68,22 +68,24 @@ var userPick = 0;
 var numberOfPicks = 0;
 var tempDrinks = 0;
 
+var textID = document.getElementById('opponentText');
+
 function computerSober () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].soberQuotes.length));
   console.log(allCharacters[charIndex].soberQuotes[quoteIndex]);
-  // textID.textContent = allCharacters[charIndex].soberQuotes[quoteIndex];
+  textID.textContent = allCharacters[charIndex].soberQuotes[quoteIndex];
 }
 
 function computerInsult () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].insults.length));
   console.log(allCharacters[charIndex].insults[quoteIndex]);
-  // textID.textContent = allCharacters[charIndex].insults[quoteIndex];
+  textID.textContent = allCharacters[charIndex].insults[quoteIndex];
 }
 
 function computerWinLose () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].winLose.length));
   console.log(allCharacters[charIndex].winLose[quoteIndex]);
-  // textID.textContent = allCharacters[charIndex].winLose[quoteIndex];
+  textID.textContent = allCharacters[charIndex].winLose[quoteIndex];
 }
 
 function randomCardGenerator() {
@@ -109,7 +111,7 @@ function userIntro() {
   computerInsult();
   // imageID.src = pathToDeckOfCardImage;
   randomCardGenerator();
-  // textID.textContent = "Will the next card be higher or lower than the card shown?";
+  textID.textContent = "Will the next card be higher or lower than the card shown?";
   console.log("Will the next card be higher or lower than the card shown?");
   oldCardValue = newCardValue;
 }
@@ -118,7 +120,7 @@ userIntro();
 function userIntroNonRandom() {
   computerInsult();
   // imageID.src = pathToDeckOfCardImage;
-  // textID.textContent = "Will the next card be higher or lower than the card shown?";
+  textID.textContent = "Will the next card be higher or lower than the card shown?";
   console.log("Will the next card be higher or lower than the card shown?");
   oldCardValue = newCardValue;
 }
@@ -134,7 +136,7 @@ function userHighPick () {
     userIncorrectPick();
   } else {
     console.log('YOU ARE CORRECT, PICK AGAIN');
-    // textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
+    textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
   }
 }
 
@@ -145,18 +147,18 @@ function userLowPick () {
     userIncorrectPick();
   } else {
     console.log('YOU ARE CORRECT, PICK AGAIN');
-    // textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
+    textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
   }
 }
 
 function userPassPick () {
   console.log('PASS TO ME');
-  // textID.textContent = 'PASS TO ME';
+  textID.textContent = 'PASS TO ME';
   computerPassIntro();
 }
 
 function userIncorrectPick() {
-  // textID.textContent = 'DRINK!!';
+  textID.textContent = 'DRINK!!';
   // opponentImageID.src = opponentDrinking;
   totalUserDrinks += tempDrinks;
   tempDrinks = 0;
