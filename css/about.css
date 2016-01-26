@@ -3,46 +3,76 @@ header {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background-color: blue;
+  background-image: url(http://pre15.deviantart.net/0782/th/pre/i/2006/153/3/b/beer_label_background_by_rsteagall.jpg);
 }
 
 h1 {
   text-align: center;
-  font-size: 60px;
+  font-size: 80px;
   font-family: Lobster;
+  -webkit-text-stroke: 1px black;
+  color: darkred;
+  text-shadow:
+     3px 3px 0 white,
+     -1px -1px 0 white,
+     1px -1px 0 white,
+     -1px 1px 0 white,
+     1px 1px 0 white;
 }
 
 h2 {
+  font-family: Candal;
+  font-size: 28px;s
   text-align: center;
+  position: relative;
+  top:-40px;
+  left: 39.5%;
+  -webkit-text-stroke: 1px black;
+ color: darkred;
+ text-shadow:
+     3px 3px 0 white,
+     -1px -1px 0 white,
+     1px -1px 0 white,
+     -1px 1px 0 white,
+     1px 1px 0 white;
 }
 
 nav {
   display: flex;
   justify-content: space-around;
-  background-color: orange;
+  background-color: darkred;
+  border: 2px solid black;
+  -webkit-text-stroke: 1px black;
+ color: darkred;
+ text-shadow:
+     3px 3px 0 black,
+     -1px -1px 0 black,
+     1px -1px 0 black,
+     -1px 1px 0 black,
+     1px 1px 0 black;
 }
 
 a {
   font-family: Candal;
   font-size: 20px;
   padding-bottom: 5px;
+  color: white;
 }
 
 main {
+  background-image: url(http://www.squareonebrewery.com/wp-content/themes/SQ1websiteWP-theme/images/woodbackground.jpg);
   display: flex;
   flex-direction: column;
   background-color: purple;
 }
 
 img {
-  width: 15%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  width: 290px;
+  height: 360px;
+  border: 2px solid black;
+  border-radius: 500px;
 }
 
-.lisaJoe {
-  padding-left: 10px;
-}
 section {
   display: flex;
   justify-content: space-around;
@@ -53,4 +83,140 @@ footer {
   justify-content: center;
   align-items: flex-end;
   background-color: gold;
+}
+
+.bioMars {
+  position: absolute;
+  top: 780px;
+  left: 21%;
+  color: white;
+  font-size: 18px;
+  text-shadow:
+ -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+   1px 1px 0 #000;
+}
+
+.bioJoe {
+  position: absolute;
+  top: 410px;
+  left: 68%;
+  color: white;
+  font-size: 18px;
+  text-shadow:
+ -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+   1px 1px 0 #000;
+}
+
+.bioLisa {
+  position: absolute;
+  top: 410px;
+  left: 21%;
+  color: white;
+  font-size: 18px;
+  text-shadow:
+ -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+   1px 1px 0 #000;
+}
+
+.bioKyle {
+  position: absolute;
+  top: 780px;
+  left: 68%;
+  color: white;
+  font-size: 18px;
+  text-shadow:
+ -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+   1px 1px 0 #000;
+}
+
+#marshall {
+  position: absolute;
+  left: 50px;
+}
+
+#lisa {
+  position: absolute;
+  left: 50px;
+}
+
+#joe {
+  position: relative;
+  left: 116.5px;
+}
+
+#kyle {
+  position: relative;
+  left: 120px;
+}
+
+.nameLisa {
+  font-size: 30px;
+  font-family: Candal;
+  position: relative;
+  top: 0px;
+  left: 260px;
+  -webkit-text-stroke: 1px black;
+ color: white;
+ text-shadow:
+     3px 3px 0 black,
+   -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+     1px 1px 0 black;
+}
+
+.nameJoe {
+  font-size: 30px;
+  font-family: Candal;
+  position: relative;
+  top: 0px;
+  left: 70px;
+  -webkit-text-stroke: 1px black;
+ color: white;
+ text-shadow:
+     3px 3px 0 black,
+   -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+     1px 1px 0 black;
+}
+
+.nameMars {
+  font-size: 30px;
+  font-family: Candal;
+  position: relative;
+  top: 0px;
+  left: 200px;
+  -webkit-text-stroke: 1px black;
+ color: white;
+ text-shadow:
+     3px 3px 0 black,
+   -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+     1px 1px 0 black;
+}
+
+.nameKyle {
+  font-size: 30px;
+  font-family: Candal;
+  position: relative;
+  top: 0px;
+  left: 90px;
+  -webkit-text-stroke: 1px black;
+ color: white;
+ text-shadow:
+     3px 3px 0 black,
+   -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+     1px 1px 0 black;
 }

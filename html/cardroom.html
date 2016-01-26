@@ -6,26 +6,31 @@
   </head>
   <body>
     <div id="page">
-      <header class="flexContainer">
-        <a href="rules.html">Rules</a>
-        <h1>Drink With Dead People</h1>
-        <h3>Card Room</h3>
+      <header>
+        <nav>
+          <ul class="containerNav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rules.html">Rules</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="cardroom.html">Card Room</a></li>
+          </ul>
+        </nav>
       </header>
+      <h1>Drink With Dead People</h1>
       <div class="imageFlexContainer">
-        <img id="opponentImage" src="http://placehold.it/150x250" />
+        <img id="opponentImage" src="http://placehold.it/250x350" />
         <h1 id="opponentText" class="opponentText"></h1>
       </div>
-      <div class="cardFlexContainer">
+      <div class="cardFlexContainer" id="cardFlexContainer">
+        <img id="cardBack" class="cardBack" src="http://placehold.it/250x350" />
         <img id="cardFront" src="http://placehold.it/250x350" />
-        <img id="cardBack" src="http://placehold.it/250x350" />
       </div>
 
 
       <div class="buttonFlexContainer">
-        <a href="../index.html">Home</a>
         <button type="button" id="highButtonID">High</button>
         <button type="button" id="lowButtonID">Low</button>
-        <button type="button" id="passButtonID">Pass</button>
+        <button type="button" id="passButtonID" style="display:none">Pass</button>
       </div>
     <script src="../js/app.js" type="text/javascript"></script>
     </div>

@@ -30,7 +30,7 @@ var allCharacters = [
 var charIndex = 0; //Temporary variable
 
 var cardData = {
-  cardImagePath: [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13],
+  cardImagePath: ['http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350'],
   cardValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13]
 };
 
@@ -69,6 +69,7 @@ var numberOfPicks = 0;
 var tempDrinks = 0;
 
 var textID = document.getElementById('opponentText');
+var imageID = document.getElementById('cardFront');
 
 function computerSober () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].soberQuotes.length));
@@ -89,8 +90,12 @@ function computerWinLose () {
 }
 
 function randomCardGenerator() {
+  if (userPick > 0) {
+    document.getElementById('passButtonID').style.display = 'inline-block';
+  }
   var randomIndex = Math.floor(Math.random() * (cardData.cardValue.length));
-  // imageID.src = cardData.cardImagePaths[randomIndex];
+  // displayRandomCard(randomIndex);
+  imageID.src = cardData.cardImagePath[randomIndex];
   newCardValue = cardData.cardValue[randomIndex];
   console.log('The new card value is ' + newCardValue);
   cardData.cardImagePath.splice(randomIndex,1);
@@ -100,14 +105,24 @@ function randomCardGenerator() {
   console.log('The number of picks are ' + numberOfPicks);
   if (numberOfPicks > 51) {
     cardData = {
-      cardImagePath: [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13],
+      cardImagePath: ['http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350'],
       cardValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13]
     };
     numberOfPicks = 0;
     }
 }
 
+// function displayRandomCard(randomIndex) {
+//   console.log('appending new card');
+//   var cardContainer = document.getElementById('cardFlexContainer');
+//   var newImageEl = document.createElement('img');
+//   newImageEl.src = cardData.cardImagePath[randomIndex];
+//   newImageEl.marginLeft = '-100px';
+//   cardContainer.appendChild(newImageEl);
+// }
+
 function userIntro() {
+  userPick = 0;
   computerInsult();
   // imageID.src = pathToDeckOfCardImage;
   randomCardGenerator();
@@ -118,6 +133,7 @@ function userIntro() {
 userIntro();
 
 function userIntroNonRandom() {
+  userPick = 0;
   computerInsult();
   // imageID.src = pathToDeckOfCardImage;
   textID.textContent = "Will the next card be higher or lower than the card shown?";
@@ -130,6 +146,7 @@ lowButtonID.addEventListener('click',userLowPick);
 passButtonID.addEventListener('click',userPassPick);
 
 function userHighPick () {
+  userPick += 1;
   oldCardValue = newCardValue;
   randomCardGenerator();
   if (newCardValue <= oldCardValue) {
@@ -141,6 +158,7 @@ function userHighPick () {
 }
 
 function userLowPick () {
+  userPick += 1;
   oldCardValue = newCardValue;
   randomCardGenerator();
   if (newCardValue >= oldCardValue) {
@@ -154,7 +172,7 @@ function userLowPick () {
 function userPassPick () {
   console.log('PASS TO ME');
   textID.textContent = 'PASS TO ME';
-  computerPassIntro();
+  computerIntroPass();
 }
 
 function userIncorrectPick() {
@@ -194,7 +212,7 @@ function computerIntroNonRandom () {
   computerPicker();
 }
 
-function computerPassIntro () {
+function computerIntroPass () {
   totalComputerPicks = 0;
   computerInsult();
   // imageID.src = pathToDeckOfCardImage;
@@ -206,8 +224,18 @@ function computerPicker () {
   computerChoice();
   if (computerPick === 1 || computerPick === 2) {
     oldCardValue = newCardValue;
+    if (oldCardValue <= 3) {
+      computerPick = 1;
+      console.log('The computer choice changed to ' + computerPick);
+    } else if (oldCardValue >= 11) {
+      computerPick = 2;
+      console.log('The computer choice changed to ' + computerPick);
+    } else {
+      computerPick = computerPick;
+    }
     computerNewCard();
   } else {
+    document.getElementById('passButtonID').style.display = 'none';
     userIntroNonRandom();
   }
 }
@@ -237,6 +265,7 @@ function computerIncorrectPick () {
   tempDrinks = 0;
   console.log('The total computer drinks are ' + totalComputerDrinks);
   // gameplayDivId.src = '';
+  document.getElementById('passButtonID').style.display = 'none';
   userIntroNonRandom();
 
 }
