@@ -1,5 +1,60 @@
+.backgroundContainer {
+  background-image: url("../img/medwoodheader.jpg");
+  /*background-image: url("../img/lightwoodheader.jpg");*/
+  /*background-image: url("../img/woodbanner.png");*/
+  /*background-image: url("../img/darkwoodheaderpdf.jpg");*/
+}
 
-header {
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.logoContainer p {
+  font-size: 15vw;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 10px;
+  margin-bottom: 0.5vw;
+  margin-top: 2vw;
+  color: #D8D8C0;
+}
+
+.sloganContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sloganContainer {
+  font-size: 2vw;
+  font-family: 'Amatic SC', cursive;
+}
+
+.sloganContainer p {
+  color: #D8D8C0;
+  font-size: 5vw;
+  margin-top: 0vw;
+  margin-bottom: 1vw;
+}
+
+.containerNav {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #D8D8C0;
+  margin-top: 0vw;
+}
+
+.containerNav li a {
+  color: #903030;
+  text-decoration: none;
+  font-size: 2.5vw;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*header {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -26,14 +81,14 @@ h3 {
 
 h4 {
   text-align: center;
-}
+}*/
 
-ul {
+/*ul {
   padding-top: 50px;
   padding-left: 650px;
   padding-bottom: 205px;
-}
-
+}*/
+/*
 li {
   padding-top: 15px;
   font-family: Candal;
@@ -62,4 +117,4 @@ footer {
   justify-content: center;
   align-items: flex-end;
   background-color: gold;
-}
+}*/
