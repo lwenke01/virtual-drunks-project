@@ -1,6 +1,6 @@
 
 
-.slogan {
+/*.slogan {
 text-align: center;
 padding: 0;
 margin: 0;
@@ -11,11 +11,13 @@ background: repeating-radial-gradient(
   #4b026f 10px,
   #4b026f 20px
 );
-}
+}*/
 
 body {
 background-color: blue;
-background-image:url('img/woodbanner.png');
+background-image:image("https://raw.githubusercontent.com/lwenke01/virtual-drunks-project/lis-tues-morning-imgs-homecss/img/woodbanner.png");
+background-repeat: no-repeat;
+background-size: cover;
 }
 nav {
 background-color: red;
@@ -129,10 +131,10 @@ below is tye slider style for drinks*/
   display: none;
 }
 
-body {
+/*body {
   background: #333;
   color: #999;
-}
+}*/
 
 
 
