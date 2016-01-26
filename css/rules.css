@@ -1,8 +1,9 @@
+body {
+  background-color: black;
+}
+
 .backgroundContainer {
   background-image: url("../img/medwoodheader.jpg");
-  /*background-image: url("../img/lightwoodheader.jpg");*/
-  /*background-image: url("../img/woodbanner.png");*/
-  /*background-image: url("../img/darkwoodheaderpdf.jpg");*/
 }
 
 .logoContainer {
@@ -34,7 +35,7 @@
 .sloganContainer p {
   color: #D8D8C0;
   font-size: 5vw;
-  margin-top: 0vw;
+  margin-top: 0;
   margin-bottom: 1vw;
 }
 
@@ -44,7 +45,8 @@
   justify-content: space-around;
   flex-wrap: wrap;
   background-color: #D8D8C0;
-  margin-top: 0vw;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .containerNav li a {
@@ -54,67 +56,48 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-/*header {
+.rulesContainer {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: blue;
+  flex-wrap: wrap;
+  background-image: url("../img/alc_background.jpg");
+  height: 800px;
 }
 
-h1 {
+.rulesFlexBox1 {
+  margin-top: 150px;
+}
+
+.hemingway {
+  position: absolute;
+  width: 90vw;
+  height: auto;
+  left: 5vw;
+}
+
+.wordBubble {
+  position: absolute;
+  width: 40vw;
+  height: auto;
+  left: 55vw;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.rulesText {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 59vw;
+  top: 46vw;
+  width: 30vw;
+  font-family: 'Vollkorn', serif;
+  font-size: 1.1vw;
+}
+
+.rulesText p {
   text-align: center;
-  font-size: 80px;
-  font-family: Lobster;
-  padding-bottom: -20px;
 }
-
-h2 {
-  text-align: center;
-  padding-bottom: -20px;
-}
-
-h3 {
-  text-align: center;
-  font-family: Candal;
-  font-size: 60px;
-}
-
-h4 {
-  text-align: center;
-}*/
-
-/*ul {
-  padding-top: 50px;
-  padding-left: 650px;
-  padding-bottom: 205px;
-}*/
-/*
-li {
-  padding-top: 15px;
-  font-family: Candal;
-}
-
-nav {
-  display: flex;
-  justify-content: space-around;
-  background-color: orange;
-}
-
-a {
-  font-family: Candal;
-  font-size: 20px;
-  padding-bottom: 5px;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  background-color: purple;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background-color: gold;
-}*/
