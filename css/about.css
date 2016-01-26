@@ -22,6 +22,12 @@ nav {
   background-color: orange;
 }
 
+a {
+  font-family: Candal;
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -34,6 +40,9 @@ img {
   padding-bottom: 10px;
 }
 
+.lisaJoe {
+  padding-left: 10px;
+}
 section {
   display: flex;
   justify-content: space-around;
