@@ -1,0 +1,27 @@
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imageFlexContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1vh;
+}
+
+.opponentText {
+  display: block;
+  width: 40vw;
+  margin-left: 2vw;
+}
+
+.cardFlexContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1vh;
+}
+.buttonFlexContainer {
+  display: flex;
+  justify-content: space-between;
+}
