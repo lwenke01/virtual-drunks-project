@@ -110,11 +110,11 @@ function userIncorrectPick() {
 // high/low buttons
 
 
-highButton.addEventListener('click',handleOnHighButton);
-lowButton.addEventListener('click',handleOnLowButton);
-
-
-function handleOnHighButton(event){
+// highButton.addEventListener('click',handleOnHighButton);
+// lowButton.addEventListener('click',handleOnLowButton);
+//
+//
+// function handleOnHighButton(event){
 
 
 function newChar(name, path, soberQuotes, insults, winLose) {
