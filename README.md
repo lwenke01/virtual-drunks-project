@@ -15,3 +15,5 @@ http://codepen.io/fredjens/pen/adqLNO
 // above is the switch animation for RADIO
 http://codepen.io/Koziuk-S/pen/xwaLKM
 // above is the styling for yes/no question of age
+http://codepen.io/rachsmith/pen/GpEJeL/
+// above is for click me beer display
