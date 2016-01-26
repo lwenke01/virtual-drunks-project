@@ -1,0 +1,56 @@
+
+header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: blue;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  font-family: Lobster;
+}
+
+h2 {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: orange;
+}
+
+a {
+  font-family: Candal;
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: purple;
+}
+
+img {
+  width: 15%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.lisaJoe {
+  padding-left: 10px;
+}
+section {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: gold;
+}
