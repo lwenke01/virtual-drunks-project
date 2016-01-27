@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<div class="container">
+
   <head>
     <link rel="stylesheet" href="page1.css" media="screen" title="no title" charset="utf-8">
     <title>Homepage</title>
@@ -8,17 +10,18 @@
   <header>
     <h1 class="slogan">LOGO GOES HERE</h1>
     <h2 class="slogan">Drink with a cold one</h2 >
+
   </header>
     <nav>
       <ul class="navbar">
-        <li><a href="#">HOME</a></li>
         <li><a href="#">RULES</a></li>
         <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">ABOUT</a></li>
       </ul>
     </nav>
    <div class="forminput">
-    <h3>Welcome to a game of Hi-Low!!! </h3>
-     <br>
+    <h2>Welcome to a game of Hi-Low!!! </h2>
+    <h2 class="qname">What is your name?</h2><input type="text" size="15" name="name" id="nameField">
     <form action="#">
     <p>Are you 21?</p>
     <input id="male" type="radio" name="gender" value="male"/>
@@ -27,10 +30,9 @@
     <label for="female">NO</label>
   </form>
 </div>
-<br><br><br><br><br><br><br><br><br>
-
-      <p>What is your name?</p><input type="text" size="15" name="name" value="">
-      <p>Pick your poison</p> <div class="switch">
+<br><br><br><br><br><br>
+</div>
+      <h2 class="pick">Pick your poison</h2> <div class="switch">
   <input name="switch" id="one" type="radio" checked/>
   <label for="one" class="switch__label">Beer</label>
   <input name="switch" id="two" type="radio"/>
@@ -48,19 +50,19 @@
 </div>
       <p>Pick your partner</p>
       <ul class="flex-container">
-        <li class="flex-item">1</li>
-        <li class="flex-item">2</li>
-        <li class="flex-item">3</li>
-        <li class="flex-item">4</li>
-        <li class="flex-item">5</li>
-        <li class="flex-item">6</li>
-        <li class="flex-item">7</li>
-        <li class="flex-item">8</li>
+        <li class="flex-item" id="pic1">1</li>
+        <li class="flex-item" id="pic2">2</li>
+        <li class="flex-item" id="pic3">3</li>
+        <li class="flex-item" id="pic4">4</li>
+        <li class="flex-item" id="pic5">5</li>
+        <li class="flex-item" id="pic6">6</li>
+        <li class="flex-item" id="pic7">7</li>
+        <li class="flex-item" id="pic8">8</li>
       </ul>
     <br>
     <br>
     <div class="buttoncenter">
-      <button type="button" onclick="alert('Create a link to game room')">Click Me!</button>
+      <button id="button">Click Me!</button>
 <script src='frontpage.js'></script>
     </div>
   </body>
