@@ -30,7 +30,7 @@ function meter() {
 
 function createBarElement1() {
   var bottomBar = document.createElement('div');
-  bottomBar.className = 'test'
+  bottomBar.className = 'tipsyCss'
   var content = document.createTextNode('Tipsy');
   bottomBar.appendChild(content);
 
@@ -40,7 +40,7 @@ function createBarElement1() {
 
 function createBarElement2() {
   var bottomBar = document.createElement('div');
-  bottomBar.className = 'test'
+  bottomBar.className = 'inebriatedCss'
   var content = document.createTextNode('inebriated');
   bottomBar.appendChild(content);
 
@@ -50,7 +50,7 @@ function createBarElement2() {
 
 function createBarElement3() {
   var bottomBar = document.createElement('div');
-  bottomBar.className = 'test'
+  bottomBar.className = 'drunkCss'
   var content = document.createTextNode('drunk');
   bottomBar.appendChild(content);
 
@@ -60,7 +60,7 @@ function createBarElement3() {
 
 function createBarElement4() {
   var bottomBar = document.createElement('div');
-  bottomBar.className = 'test'
+  bottomBar.className = 'wastedCss'
   var content = document.createTextNode('wasted');
   bottomBar.appendChild(content);
 
@@ -70,7 +70,7 @@ function createBarElement4() {
 
 function createBarElement5() {
   var bottomBar = document.createElement('div');
-  bottomBar.className = 'test'
+  bottomBar.className = 'shitFacedCss'
   var content = document.createTextNode('shit-faced');
   bottomBar.appendChild(content);
 
@@ -80,7 +80,7 @@ function createBarElement5() {
 
 function createBarElement6() {
   var bottomBar = document.createElement('div');
-  bottomBar.className = 'test'
+  bottomBar.className = 'timeToStopCss'
   var content = document.createTextNode('It\'s time to stop.');
   bottomBar.appendChild(content);
 
