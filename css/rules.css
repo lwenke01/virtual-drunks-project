@@ -4,6 +4,7 @@ body {
 
 .backgroundContainer {
   background-image: url("../img/medwoodheader.jpg");
+  background-size: cover;
 }
 
 .logoContainer {
