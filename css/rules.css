@@ -1,65 +1,104 @@
+body {
+  background-color: black;
+}
 
-header {
+.backgroundContainer {
+  background-image: url("../img/medwoodheader.jpg");
+  background-size: cover;
+}
+
+.logoContainer {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  background-color: blue;
+  flex-wrap: wrap;
 }
 
-h1 {
-  text-align: center;
-  font-size: 80px;
-  font-family: Lobster;
-  padding-bottom: -20px;
+.logoContainer p {
+  font-size: 15vw;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 10px;
+  margin-bottom: 0.5vw;
+  margin-top: 2vw;
+  color: #D8D8C0;
 }
 
-h2 {
-  text-align: center;
-  padding-bottom: -20px;
-}
-
-h3 {
-  text-align: center;
-  font-family: Candal;
-  font-size: 60px;
-}
-
-h4 {
-  text-align: center;
-}
-
-ul {
-  padding-top: 50px;
-  padding-left: 650px;
-  padding-bottom: 205px;
-}
-
-li {
-  padding-top: 15px;
-  font-family: Candal;
-}
-
-nav {
+.sloganContainer {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sloganContainer {
+  font-size: 2vw;
+  font-family: 'Amatic SC', cursive;
+}
+
+.sloganContainer p {
+  color: #D8D8C0;
+  font-size: 5vw;
+  margin-top: 0;
+  margin-bottom: 1vw;
+}
+
+.containerNav {
+  display: flex;
+  list-style-type: none;
   justify-content: space-around;
-  background-color: orange;
+  flex-wrap: wrap;
+  background-color: #D8D8C0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-a {
-  font-family: Candal;
-  font-size: 20px;
-  padding-bottom: 5px;
+.containerNav li a {
+  color: #903030;
+  text-decoration: none;
+  font-size: 2.5vw;
+  font-family: 'Montserrat', sans-serif;
 }
 
-main {
+.rulesContainer {
   display: flex;
-  flex-direction: column;
-  background-color: purple;
+  flex-wrap: wrap;
+  background-image: url("../img/alc_background.jpg");
+  height: 800px;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  background-color: gold;
+.rulesFlexBox1 {
+  margin-top: 12vw;
+}
+
+.hemingway {
+  position: absolute;
+  width: 90vw;
+  height: auto;
+  left: 5vw;
+}
+
+.wordBubble {
+  position: absolute;
+  width: 40vw;
+  height: auto;
+  left: 55vw;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.rulesText {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 59vw;
+  top: 46vw;
+  width: 30vw;
+  font-family: 'Vollkorn', serif;
+  font-size: 1.1vw;
+}
+
+.rulesText p {
+  text-align: center;
 }
