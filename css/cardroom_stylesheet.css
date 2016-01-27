@@ -1,18 +1,60 @@
+body {
+  background-color: white;
+}
+
+.backgroundContainer {
+  background-image: url("../img/medwoodheader.jpg");
+  background-size: cover;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.logoContainer p {
+  font-size: 15vw;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 10px;
+  margin-bottom: 0.5vw;
+  margin-top: 2vw;
+  color: #D8D8C0;
+}
+
+.sloganContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sloganContainer {
+  font-size: 2vw;
+  font-family: 'Amatic SC', cursive;
+}
+
+.sloganContainer p {
+  color: #D8D8C0;
+  font-size: 5vw;
+  margin-top: 0;
+  margin-bottom: 1vw;
+}
+
 .containerNav {
   display: flex;
   list-style-type: none;
   justify-content: space-around;
   flex-wrap: wrap;
+  background-color: #D8D8C0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .containerNav li a {
-  color: black;
+  color: #903030;
   text-decoration: none;
   font-size: 2.5vw;
-}
-
-h1 {
-  text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .imageFlexContainer {

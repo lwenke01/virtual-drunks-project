@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="../css/cardroom_stylesheet.css">
-    <title>Card Room</title>
-  </head>
+<head>
+  <title>Cardroom</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
+  <link href="../css/cardroom_stylesheet.css" rel="stylesheet" type="text/css"/>
+</head>
   <body>
     <div id="page">
       <header>
+        <div class="backgroundContainer">
+          <div class="logoContainer">
+            <p>Cardroom</p>
+          </div>
+          <div class="sloganContainer">
+            <p>Drink with a cold one!</p>
+          </div>
+        </div>
         <nav>
           <ul class="containerNav">
             <li><a href="index.html">Home</a></li>
             <li><a href="rules.html">Rules</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="cardroom.html">Card Room</a></li>
+            <li><a href="aboutus.html">About us</a></li>
           </ul>
         </nav>
       </header>
-      <h1>Drink With Dead People</h1>
       <div class="imageFlexContainer">
         <img id="opponentImage" src="http://placehold.it/250x350" />
         <h1 id="opponentText" class="opponentText"></h1>
       </div>
       <div class="cardFlexContainer" id="cardFlexContainer">
-        <img id="cardBack" class="cardBack" src="http://placehold.it/250x350" />
-        <img id="cardFront" src="http://placehold.it/250x350" />
+        <div class="cardFrontImg">
+          <figure><img id="cardBack" class="cardBack" src="../img/card_images/card_back.jpg" /></figure>
+        </div>
+        <div class="cardBackImg">
+          <figure><img id="cardFront" src="http://placehold.it/250x350" /></figure>
+        </div>
       </div>
-
-
       <div class="buttonFlexContainer">
         <button type="button" id="highButtonID">High</button>
         <button type="button" id="lowButtonID">Low</button>
