@@ -1,3 +1,19 @@
+.opponentText {
+  width: auto;
+  height: 40vw;
+  position: absolute;
+  z-index: 1;
+  left: 50vw;
+  top: -5vw;
+  bottom: 100vw;
+}
+
+.opponentImage {
+  height: 40vh;
+  width: auto;
+  position: absolute;
+}
+
 .containerNav {
   display: flex;
   list-style-type: none;
@@ -18,19 +34,17 @@ h1 {
 .imageFlexContainer {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   margin-bottom: 1vh;
+  height: 20vw;
 }
 
-.imageFlexContainer img {
-  height: 40vh;
-  width: auto;
-}
 
-.opponentText {
+/*.opponentText {
   display: block;
   width: 40vw;
   margin-left: 2vw;
-}
+}*/
 
 .cardFlexContainer {
   display: flex;

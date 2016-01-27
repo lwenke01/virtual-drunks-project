@@ -1,23 +1,25 @@
 // 'use strict';
 
-function newChar(name, path, soberQuotes, insults, winLose) {
+function newChar(name, path, computerStaticImage, computerDrinkImage, soberQuotes, insults, winLose) {
   this.name = name;
   this.path = path;
+  this.computerStaticImage = computerStaticImage;
+  this.computerDrinkImage = computerDrinkImage;
   this.soberQuotes = soberQuotes;
   this.insults = insults;
   this.winLose = winLose;
 }
 
 var allCharacters = [
-  new newChar('Abe Lincoln', '---', ['Nearly all people can stand adversity, but if you want to test someones character, get them drunk.', 'This will be over before you can say, "Sic semper tyrannis"!','It is not best to swap horses while crossing the river.'], ['Four score and seventy years years ago, I was drinking your great grandfather\'s ass under the table', 'I destroy my enemies when I make them my friends.'], ['placeholder', 'placeholder']),
+  new newChar('Abraham Lincoln', '---','../img/abe2.png','../img/abe1.png',['../img/quotes/abe2quotes.png', '../img/quotes/abe1quotes.png','../img/quotes/abe3sober.png'], ['../img/quotes/abe1insult.png', '../img/quotes/abe2insult.png'], [':Chug:', ':drink:']),
 
   new newChar('Genghis Khan', '---', ['I am the punishment of God...If you had not committed great sins, God would not have sent a punishment like me upon you.'], ['I am the flail of god. Had you not created great sins, god would not have sent a punishment like me upon you.', 'A man\'s greatest joy is crushing his enemies.'], ['There is no value in anything until it is finished.']),
 
   new newChar('William Shakespeare', '---', ['To drink, or not to drink. That is the question.', ''], ['Brevity is the soul of wit, you have none.', 'Do you think I am easier to be played on than a pipe?'], ['Misery acquaints a man with strange bedfellows.', 'There is nothing either good or bad, but thinking makes it so']),
 
-  new newChar('Albert Einstein', '---', ['There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.', 'Logic will get you from A to Z; imagination will get you everywhere.'], ['Two things are infinite: the universe and human stupidity; and I\'m not sure about the universe.', 'A clever person solves a problem. A wise person avoids it.'], ['Not everything that counts can be counted, and not everything that can be counted counts.', 'placeholder']),
+  new newChar('Albert Einstein', '---','../img/einsteinnormal.png', '../img/einstein1.png',['../img/quotes/ein1sober.png', '../img/quotes/ein2sober.png'], ['../img/quotes/ein1insult.png', '../img/quotes/ein2insult.png'], [':Chug:', ':drink:']),
 
-  new newChar('Napolean', '---', ['I am Napolean, I should have conquered the world!', 'Let us drink, you swine!'], ['Never interrupt your enemy when he is making a mistake.', 'I have never found the limit of my capacity to drink.'], ['Victory belongs to the most persevering.', 'Death is nothing, but to live defeated and inglorious is to die daily.']),
+  new newChar('Napoleon', '---', ['I am Napolean, I should have conquered the world!', 'Let us drink, you swine!'], ['Never interrupt your enemy when he is making a mistake.', 'I have never found the limit of my capacity to drink.'], ['Victory belongs to the most persevering.', 'Death is nothing, but to live defeated and inglorious is to die daily.']),
 
   new newChar('Ghandi', '---', ['Be the change that you wish to see in the world.', 'The future depends on what you do today... and your sorry ass is going to get drunk.'], ['An eye for an eye will only make the whole world blind.', 'Nobody can hurt me without my permission.', 'Hate the sin, love the sinner.', 'I will crush you with the power of one thousand suns!'], ['First they ignore you, then they ridicule you, then they fight you, and then you win.', 'To live peacefully is essential, but I may have to make an exception for you.']),
 
@@ -28,6 +30,8 @@ var allCharacters = [
 
 // var charIndex = localStorage.get();
 var charIndex = 0; //Temporary variable
+
+
 
 var cardData = {
   cardImagePath: ['http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350','http://placehold.it/250x350'],
@@ -70,23 +74,32 @@ var tempDrinks = 0;
 
 var textID = document.getElementById('opponentText');
 var imageID = document.getElementById('cardFront');
+var charImgID = document.getElementById('opponentImage');
+
+
+charImgID.src = allCharacters[charIndex].computerStaticImage;
+
 
 function computerSober () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].soberQuotes.length));
-  console.log(allCharacters[charIndex].soberQuotes[quoteIndex]);
-  textID.textContent = allCharacters[charIndex].soberQuotes[quoteIndex];
+  // console.log(allCharacters[charIndex].soberQuotes[quoteIndex]);
+  textID.src = allCharacters[charIndex].soberQuotes[quoteIndex];
+  charImgID.src = allCharacters[charIndex].computerStaticImage;
+  // computerSober();
 }
+
 
 function computerInsult () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].insults.length));
-  console.log(allCharacters[charIndex].insults[quoteIndex]);
-  textID.textContent = allCharacters[charIndex].insults[quoteIndex];
+  // console.log(allCharacters[charIndex].insults[quoteIndex]);
+  textID.src = allCharacters[charIndex].insults[quoteIndex];
 }
 
 function computerWinLose () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].winLose.length));
   console.log(allCharacters[charIndex].winLose[quoteIndex]);
-  textID.textContent = allCharacters[charIndex].winLose[quoteIndex];
+  textID.src = allCharacters[charIndex].winLose[quoteIndex];
+  charImgID.src = allCharacters[charIndex].computerDrinkImage;
 }
 
 function randomCardGenerator() {
@@ -126,8 +139,8 @@ function userIntro() {
   computerInsult();
   // imageID.src = pathToDeckOfCardImage;
   randomCardGenerator();
-  textID.textContent = "Will the next card be higher or lower than the card shown?";
-  console.log("Will the next card be higher or lower than the card shown?");
+  // textID.textContent = "Will the next card be higher or lower than the card shown?";
+  // console.log("Will the next card be higher or lower than the card shown?");
   oldCardValue = newCardValue;
 }
 userIntro();
@@ -136,8 +149,8 @@ function userIntroNonRandom() {
   userPick = 0;
   computerInsult();
   // imageID.src = pathToDeckOfCardImage;
-  textID.textContent = "Will the next card be higher or lower than the card shown?";
-  console.log("Will the next card be higher or lower than the card shown?");
+  // textID.textContent = "Will the next card be higher or lower than the card shown?";
+  // console.log("Will the next card be higher or lower than the card shown?");
   oldCardValue = newCardValue;
 }
 
@@ -152,8 +165,8 @@ function userHighPick () {
   if (newCardValue <= oldCardValue) {
     userIncorrectPick();
   } else {
-    console.log('YOU ARE CORRECT, PICK AGAIN');
-    textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
+    // console.log('YOU ARE CORRECT, PICK AGAIN');
+    // textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
   }
 }
 
@@ -164,19 +177,19 @@ function userLowPick () {
   if (newCardValue >= oldCardValue) {
     userIncorrectPick();
   } else {
-    console.log('YOU ARE CORRECT, PICK AGAIN');
-    textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
+    // console.log('YOU ARE CORRECT, PICK AGAIN');
+    // textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
   }
 }
 
 function userPassPick () {
-  console.log('PASS TO ME');
-  textID.textContent = 'PASS TO ME';
+  // console.log('PASS TO ME');
+  // textID.textContent = 'PASS TO ME';
   computerIntroPass();
 }
 
 function userIncorrectPick() {
-  textID.textContent = 'DRINK!!';
+  // textID.textContent = 'DRINK!!';
   // opponentImageID.src = opponentDrinking;
   totalUserDrinks += tempDrinks;
   tempDrinks = 0;
