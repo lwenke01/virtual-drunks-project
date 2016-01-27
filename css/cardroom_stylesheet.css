@@ -1,49 +1,220 @@
+body {
+  background-color: black;
+}
+
+.backgroundContainer {
+  background-image: url("../img/medwoodheader.jpg");
+  background-size: cover;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.logoContainer p {
+  font-size: 15vw;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 10px;
+  margin-bottom: 0.5vw;
+  margin-top: 2vw;
+  color: #D8D8C0;
+}
+
+.sloganContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sloganContainer {
+  font-size: 2vw;
+  font-family: 'Amatic SC', cursive;
+}
+
+.sloganContainer p {
+  color: #D8D8C0;
+  font-size: 5vw;
+  margin-top: 0;
+  margin-bottom: 1vw;
+}
+
 .containerNav {
   display: flex;
   list-style-type: none;
   justify-content: space-around;
   flex-wrap: wrap;
+  background-color: #D8D8C0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .containerNav li a {
-  color: black;
+  color: #903030;
   text-decoration: none;
   font-size: 2.5vw;
+  font-family: 'Montserrat', sans-serif;
 }
 
-h1 {
-  text-align: center;
+.gameContainer {
+  background-image: url("../img/alc_background.jpg");
+  height: 800px;
 }
 
 .imageFlexContainer {
   display: flex;
   justify-content: center;
-  margin-bottom: 1vh;
+  margin-bottom: 1vw;
+  height: 23vw;
 }
 
-.imageFlexContainer img {
-  height: 40vh;
+.opponentImage {
+  position: absolute;
+  left: 20vw;
+  height: 20vw;
   width: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 20px;
+}
+
+.wordBubble {
+  position: absolute;
+  width: 45vw;
+  height: 20vw;
+  left: 38vw;
+  top: 32vw;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
 }
 
 .opponentText {
+  position: absolute;
+  left: 40vw;
   display: block;
-  width: 40vw;
+  width: 35vw;
   margin-left: 2vw;
+  color: black;
+  z-index: 1;
+  text-align: center;
+  font-size: 2vw;
 }
 
-.cardFlexContainer {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1vh;
+.container {
+  width: 15vw;
+  height: 20vw;
+  position: relative;
+  perspective: 3000px;
+  margin-bottom: 2vw;
+  /*padding-left: 2vw;*/
 }
 
-.cardFlexContainer img {
-  height: 35vh;
-  width: auto;
+.backImg {
+  width: 15vw;
+  height: 20vw;
+  border-width: 0;
+}
+
+.frontImg {
+  width: 15vw;
+  height: 20vw;
+  border-width: 0;
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1.5s;
+  border-width: 0;
+}
+
+#card figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-width: 0;
+}
+
+.backImgStill {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-width: 0;
+}
+
+#card .front {
+  transform: rotateY( 180deg );
+  border-width: 0;
+}
+
+#card.flipped {
+  transform: rotateY( 180deg ) translate3d(-80vw,0px,0px);
+}
+
+.oldCard {
+  margin: 0;
+  display: block;
+  position: absolute;
+  left: 80vw;
+  width: 100%;
+  height: 100%;
 }
 
 .buttonFlexContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.highButtonID {
+  background-color: blue;
+  border-radius: 10vw;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5vw;
+  position: absolute;
+  left: 35vw;
+}
+
+.lowButtonID {
+  background-color: red;
+  border-radius: 10vw;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5vw;
+  position: absolute;
+  left: 45vw;
+}
+
+.passButtonID {
+  background-color: green;
+  border-radius: 10vw;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5vw;
+  position: absolute;
+  left: 55vw;
 }
