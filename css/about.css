@@ -1,17 +1,72 @@
+/*GROW*/
+.grow img {
+  height: 360px;
+  width: 290px;
+
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+.grow img:hover {
+  width: 400px;
+  height: 400px;
+}
+/*shrink picture */
+.shrink img {
+  height: 360px;
+  width: 290px;
+
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+.shrink img:hover {
+  width: 160px;
+  height: 220px;
+}
+/* morph picture */
+.morph {
+  -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+}
+
+.morph:hover {
+  border-radius: 90%;
+  -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+       -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+body {
+margin-top: 0;
+margin-left: 0;
+margin-right: 0;
+}
 
 header {
   display: flex;
   justify-content: center;
   flex-direction: column;
   background-image: url(http://pre15.deviantart.net/0782/th/pre/i/2006/153/3/b/beer_label_background_by_rsteagall.jpg);
-  margin: -150px;
+  max-height: 260px;
 }
 
 h1 {
   position: relative;
   top: -10px;
   text-align: center;
-  font-size: 210px;
+  font-size: 15vw;
   font-family: 'Amatic SC', cursive;
   -webkit-text-stroke: 1px black;
   color: darkred;
@@ -24,11 +79,12 @@ h1 {
 }
 
 nav {
+  min-height: 38px;
   display: flex;
   justify-content: space-around;
   background-color: darkred;
   border: 2px solid black;
-  margin: -10px;
+  margin: 0px;
   -webkit-text-stroke: 1px black;
  color: darkred;
  text-shadow:
@@ -41,7 +97,7 @@ nav {
 
 a {
   font-family: Candal;
-  font-size: 20px;
+  font-size: 2vw;
   padding-bottom: 5px;
   color: white;
 }
@@ -51,7 +107,7 @@ main {
   display: flex;
   flex-direction: column;
   background-color: purple;
-  margin: -10px;
+  min-height: 900px;
 }
 
 img {
@@ -70,14 +126,21 @@ footer {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  background-color: gold;
-  margin: -10px;
+  background-color: darkred;
+  color: darkred;
+  text-shadow:
+      3px 3px 0 black,
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
 }
 
 .bioMars {
   position: absolute;
   top: 780px;
   left: 21%;
+  right: 50%;
   color: white;
   font-size: 18px;
   text-shadow:
@@ -89,8 +152,8 @@ footer {
 
 .bioJoe {
   position: absolute;
-  top: 410px;
-  left: 68%;
+  top: 400px;
+  left: 72%;
   color: white;
   font-size: 18px;
   text-shadow:
@@ -104,6 +167,7 @@ footer {
   position: absolute;
   top: 410px;
   left: 21%;
+  right: 50%;
   color: white;
   font-size: 18px;
   text-shadow:
@@ -116,7 +180,7 @@ footer {
 .bioKyle {
   position: absolute;
   top: 780px;
-  left: 68%;
+  left: 72%;
   color: white;
   font-size: 18px;
   text-shadow:
@@ -129,25 +193,26 @@ footer {
 #marshall {
   position: absolute;
   left: 50px;
-  top: 690px;
+  top: 740px;
 }
 
 #lisa {
   position: absolute;
   left: 50px;
-  top: 300px;
+  top: 320px;
 }
 
 #joe {
   position: relative;
-  left: 116.5px;
+  left: 189px;
   top: 20px;
 }
 
 #kyle {
   position: relative;
-  left: 120px;
-  top: 45px;
+  left: 133px;
+  top: 85px;
+
 }
 
 .nameLisa {
@@ -203,7 +268,7 @@ footer {
   font-family: Candal;
   position: relative;
   top: 30px;
-  left: 90px;
+  left: -70px;
   -webkit-text-stroke: 1px black;
  color: white;
  text-shadow:
