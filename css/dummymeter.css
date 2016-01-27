@@ -2,13 +2,79 @@ h1 {
   background-color: black;
 }
 
-.test {
+.tipsyCss {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  border: 1px solid black;
   font-size: 35px;
+  margin-right: 1500px;
+  background-color: lightgreen;
+}
+
+.inebriatedCss {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  font-size: 35px;
+  margin-right: 1500px;
+  background-color: green;
+}
+
+.drunkCss {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  font-size: 35px;
+  margin-right: 1500px;
+  background-color: darkgreen;
+}
+
+.wastedCss {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  font-size: 35px;
+  margin-right: 1500px;
+  background-color: yellow;
+}
+
+.shitFacedCss {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  font-size: 35px;
+  margin-right: 1500px;
+  background-color: orange;
+}
+
+.timeToStopCss {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  font-size: 35px;
+  margin-right: 1500px;
+  background-color: red;
 }
 
 #meterContainer {
   display: flex;
   flex-direction: column-reverse;
+}
+
+#tipsy {
+}
+
+#inebriated {
+}
+
+#drunk {
+}
+
+#wasted {
+}
+
+#shitFaced {
+}
+
+#timeToStop {
 }
