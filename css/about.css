@@ -4,32 +4,18 @@ header {
   justify-content: center;
   flex-direction: column;
   background-image: url(http://pre15.deviantart.net/0782/th/pre/i/2006/153/3/b/beer_label_background_by_rsteagall.jpg);
+  margin: -150px;
 }
 
 h1 {
+  position: relative;
+  top: -10px;
   text-align: center;
-  font-size: 80px;
-  font-family: Lobster;
+  font-size: 210px;
+  font-family: 'Amatic SC', cursive;
   -webkit-text-stroke: 1px black;
   color: darkred;
   text-shadow:
-     3px 3px 0 white,
-     -1px -1px 0 white,
-     1px -1px 0 white,
-     -1px 1px 0 white,
-     1px 1px 0 white;
-}
-
-h2 {
-  font-family: Candal;
-  font-size: 28px;s
-  text-align: center;
-  position: relative;
-  top:-40px;
-  left: 39.5%;
-  -webkit-text-stroke: 1px black;
- color: darkred;
- text-shadow:
      3px 3px 0 white,
      -1px -1px 0 white,
      1px -1px 0 white,
@@ -42,6 +28,7 @@ nav {
   justify-content: space-around;
   background-color: darkred;
   border: 2px solid black;
+  margin: -10px;
   -webkit-text-stroke: 1px black;
  color: darkred;
  text-shadow:
@@ -64,6 +51,7 @@ main {
   display: flex;
   flex-direction: column;
   background-color: purple;
+  margin: -10px;
 }
 
 img {
@@ -83,6 +71,7 @@ footer {
   justify-content: center;
   align-items: flex-end;
   background-color: gold;
+  margin: -10px;
 }
 
 .bioMars {
@@ -140,21 +129,25 @@ footer {
 #marshall {
   position: absolute;
   left: 50px;
+  top: 690px;
 }
 
 #lisa {
   position: absolute;
   left: 50px;
+  top: 300px;
 }
 
 #joe {
   position: relative;
   left: 116.5px;
+  top: 20px;
 }
 
 #kyle {
   position: relative;
   left: 120px;
+  top: 45px;
 }
 
 .nameLisa {
@@ -193,7 +186,7 @@ footer {
   font-size: 30px;
   font-family: Candal;
   position: relative;
-  top: 0px;
+  top: 30px;
   left: 200px;
   -webkit-text-stroke: 1px black;
  color: white;
@@ -209,7 +202,7 @@ footer {
   font-size: 30px;
   font-family: Candal;
   position: relative;
-  top: 0px;
+  top: 30px;
   left: 90px;
   -webkit-text-stroke: 1px black;
  color: white;
