@@ -26,35 +26,12 @@ var allCharacters = [
   new newChar('John Belushi', '---', ['On stage is the only place where I really know what I\'m doing.', 'I\'m John Belushi!'], ['Nothing is over until we decide it is! Was it over when the Germans bombed Pearl Harbor? Hell, no!', 'Wise Up!', 'I suggest you go out and buy as many Blues albums as you can.'], ['I owe it all to little chocolate donuts.', 'Christ, seven years of college, down the drain.'])
 ];
 
-// var charIndex = localStorage.get();
 var charIndex = 0; //Temporary variable
 
 var cardData = {
   cardImagePath: ['../img/card_images/ace_of_clubs.png','../img/card_images/2_of_clubs.png','../img/card_images/3_of_clubs.png','../img/card_images/4_of_clubs.png','../img/card_images/5_of_clubs.png','../img/card_images/6_of_clubs.png','../img/card_images/7_of_clubs.png','../img/card_images/8_of_clubs.png','../img/card_images/9_of_clubs.png','../img/card_images/10_of_clubs.png','../img/card_images/jack_of_clubs2.png','../img/card_images/queen_of_clubs2.png','../img/card_images/king_of_clubs2.png','../img/card_images/ace_of_spades.png','../img/card_images/2_of_spades.png','../img/card_images/3_of_spades.png','../img/card_images/4_of_spades.png','../img/card_images/5_of_spades.png','../img/card_images/6_of_spades.png','../img/card_images/7_of_spades.png','../img/card_images/8_of_spades.png','../img/card_images/9_of_spades.png','../img/card_images/10_of_spades.png','../img/card_images/jack_of_spades2.png','../img/card_images/queen_of_spades2.png','../img/card_images/king_of_spades2.png','../img/card_images/ace_of_hearts.png','../img/card_images/2_of_hearts.png','../img/card_images/3_of_hearts.png','../img/card_images/4_of_hearts.png','../img/card_images/5_of_hearts.png','../img/card_images/6_of_hearts.png','../img/card_images/7_of_hearts.png','../img/card_images/8_of_hearts.png','../img/card_images/9_of_hearts.png','../img/card_images/10_of_hearts.png','../img/card_images/jack_of_hearts2.png','../img/card_images/queen_of_hearts2.png','../img/card_images/king_of_hearts2.png','../img/card_images/ace_of_diamonds.png','../img/card_images/2_of_diamonds.png','../img/card_images/3_of_diamonds.png','../img/card_images/4_of_diamonds.png','../img/card_images/5_of_diamonds.png','../img/card_images/6_of_diamonds.png','../img/card_images/7_of_diamonds.png','../img/card_images/8_of_diamonds.png','../img/card_images/9_of_diamonds.png','../img/card_images/10_of_diamonds.png','../img/card_images/jack_of_diamonds2.png','../img/card_images/queen_of_diamonds2.png','../img/card_images/king_of_diamonds2.png'],
   cardValue: [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,3,4,5,6,7,8,9,10,11,12,13]
 };
-
-// var textID = "id of html text area";
-// var imageID = "id of html card image area";
-// var flipID = "id of html card flip image area";
-// var opponentInsult = "pick of opponent insult";
-// var pathToDeckOfCardImage = "image of deck of cards";
-// var cardArrayLength = "length of array of cards";
-// var pathToFlipCardImage = "array of card image paths";
-// var arrayOfCardValues = "array of card values";
-// var soberQuote = 'sober quote message';
-// var newCardValue = 'randomly generated new card value';
-// var oldCardValue = 'randomly generated value of old card';
-// var cryOfDismay = 'cry of dismay';
-// var opponentImageID = 'id of opponent image area';
-// var totalComputerDrinks = 'total number of computer drinks';
-// var gameplayDivId = 'id for div containing card image space';
-// var totalUserDrinks = 'total number of computer drinks';
-// var highButtonID = 'button ID of HIGH button';
-// var lowButtonID = 'button ID of low button';
-// var passButtonID = 'button id for pass button';
-// var opponentDrinking = 'image path to opponent drinking';
-
 
 var computerCardValue = 0;
 var totalComputerDrinks = 0;
@@ -69,7 +46,9 @@ var numberOfPicks = 0;
 var tempDrinks = 0;
 
 var textID = document.getElementById('opponentText');
-var imageID = document.getElementById('cardFront');
+var imageID = document.getElementById('frontImg');
+var card = document.getElementById('card');
+var cardContainer = document.getElementById('container');
 
 function computerSober () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].soberQuotes.length));
@@ -94,8 +73,17 @@ function randomCardGenerator() {
     document.getElementById('passButtonID').style.display = 'inline-block';
   }
   var randomIndex = Math.floor(Math.random() * (cardData.cardValue.length));
-  // displayRandomCard(randomIndex);
   imageID.src = cardData.cardImagePath[randomIndex];
+  setTimeout(function(){
+    card.className = 'flipped';
+    setTimeout(function() {
+      var imgEl = document.createElement('img');
+      imgEl.src = imageID.src;
+      imgEl.className = 'oldCard';
+      cardContainer.appendChild(imgEl);
+      card.className = 'card';
+    }, 500);
+  }, 500);
   newCardValue = cardData.cardValue[randomIndex];
   console.log('The new card value is ' + newCardValue);
   cardData.cardImagePath.splice(randomIndex,1);
@@ -110,16 +98,8 @@ function randomCardGenerator() {
     };
     numberOfPicks = 0;
     }
-}
 
-// function displayRandomCard(randomIndex) {
-//   console.log('appending new card');
-//   var cardContainer = document.getElementById('cardFlexContainer');
-//   var newImageEl = document.createElement('img');
-//   newImageEl.src = cardData.cardImagePath[randomIndex];
-//   newImageEl.marginLeft = '-100px';
-//   cardContainer.appendChild(newImageEl);
-// }
+}
 
 function userIntro() {
   userPick = 0;
@@ -130,7 +110,6 @@ function userIntro() {
   console.log("Will the next card be higher or lower than the card shown?");
   oldCardValue = newCardValue;
 }
-userIntro();
 
 function userIntroNonRandom() {
   userPick = 0;
@@ -149,6 +128,7 @@ function userHighPick () {
   userPick += 1;
   oldCardValue = newCardValue;
   randomCardGenerator();
+  //card.className = 'flipped';
   if (newCardValue <= oldCardValue) {
     userIncorrectPick();
   } else {
@@ -161,6 +141,7 @@ function userLowPick () {
   userPick += 1;
   oldCardValue = newCardValue;
   randomCardGenerator();
+  // card.className = 'flipped';
   if (newCardValue >= oldCardValue) {
     userIncorrectPick();
   } else {
@@ -267,5 +248,6 @@ function computerIncorrectPick () {
   // gameplayDivId.src = '';
   document.getElementById('passButtonID').style.display = 'none';
   userIntroNonRandom();
-
 }
+
+userIntro();
