@@ -26,22 +26,23 @@
           </ul>
         </nav>
       </header>
-      <div class="imageFlexContainer">
-        <img id="opponentImage" src="http://placehold.it/250x350" />
-        <h1 id="opponentText" class="opponentText"></h1>
-      </div>
-      <div class="container" id="container">
-        <img class="backImgStill" src="../img/card_images/card_back.jpg"/>
-        <div id="card" class="card">
-          <figure class="back"><img class="backImg" src="../img/card_images/card_back.jpg"/></figure>
-          <figure class="front"><img class="frontImg" id="frontImg" src="../img/card_images/red_joker.png" /></figure>
+      <div class="gameContainer">
+        <div class="imageFlexContainer">
+          <img id="opponentImage" class="opponentImage" />
+          <h1 id="opponentText" class="opponentText"></h1>
         </div>
-      </div>
-      <div class="buttonFlexContainer">
-        <button type="button" id="startButtonID">Start Game</button>
-        <button type="button" id="highButtonID">High</button>
-        <button type="button" id="lowButtonID">Low</button>
-        <button type="button" id="passButtonID" style="display:none">Pass</button>
+        <div class="container" id="container">
+          <img class="backImgStill" src="../img/card_images/card_back.jpg"/>
+          <div id="card" class="card">
+            <figure class="back"><img class="backImg" id="backImg" src="../img/card_images/card_back.jpg"/></figure>
+            <figure class="front"><img class="frontImg" id="frontImg" src="../img/card_images/red_joker.png" /></figure>
+          </div>
+        </div>
+        <div class="buttonFlexContainer">
+          <button type="button" class="highButtonID" id="highButtonID">High</button>
+          <button type="button" class="lowButtonID" id="lowButtonID">Low</button>
+          <button type="button" class="passButtonID" id="passButtonID" style="display:none">Pass</button>
+        </div>
       </div>
     <script src="../js/app.js" type="text/javascript"></script>
     </div>

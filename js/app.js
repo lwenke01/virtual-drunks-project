@@ -9,7 +9,7 @@ function newChar(name, path, soberQuotes, insults, winLose) {
 }
 
 var allCharacters = [
-  new newChar('Abe Lincoln', '---', ['Nearly all people can stand adversity, but if you want to test someones character, get them drunk.', 'This will be over before you can say, "Sic semper tyrannis"!','It is not best to swap horses while crossing the river.'], ['Four score and seventy years years ago, I was drinking your great grandfather\'s ass under the table', 'I destroy my enemies when I make them my friends.'], ['placeholder', 'placeholder']),
+  new newChar('Abe Lincoln', ['../img/abe2.png','../img/abe1.png'], ['Nearly all people can stand adversity, but if you want to test someones character, get them drunk.', 'This will be over before you can say, "Sic semper tyrannis"!','It is not best to swap horses while crossing the river.'], ['Four score and seven years years ago, I was drinking your great grandfather\'s ass under the table', 'I destroy my enemies when I make them my friends.'], ['placeholder', 'placeholder']),
 
   new newChar('Genghis Khan', '---', ['I am the punishment of God...If you had not committed great sins, God would not have sent a punishment like me upon you.'], ['I am the flail of god. Had you not created great sins, god would not have sent a punishment like me upon you.', 'A man\'s greatest joy is crushing his enemies.'], ['There is no value in anything until it is finished.']),
 
@@ -46,17 +46,20 @@ var numberOfPicks = 0;
 var tempDrinks = 0;
 
 var textID = document.getElementById('opponentText');
-var imageID = document.getElementById('frontImg');
+var opponentID = document.getElementById('opponentImage');
+var cardImageID = document.getElementById('frontImg');
 var card = document.getElementById('card');
 var cardContainer = document.getElementById('container');
 
 function computerSober () {
+  opponentID.src = allCharacters[charIndex].path[0];
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].soberQuotes.length));
   console.log(allCharacters[charIndex].soberQuotes[quoteIndex]);
   textID.textContent = allCharacters[charIndex].soberQuotes[quoteIndex];
 }
 
 function computerInsult () {
+  opponentID.src = allCharacters[charIndex].path[1];
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].insults.length));
   console.log(allCharacters[charIndex].insults[quoteIndex]);
   textID.textContent = allCharacters[charIndex].insults[quoteIndex];
@@ -73,17 +76,23 @@ function randomCardGenerator() {
     document.getElementById('passButtonID').style.display = 'inline-block';
   }
   var randomIndex = Math.floor(Math.random() * (cardData.cardValue.length));
-  imageID.src = cardData.cardImagePath[randomIndex];
+  var imgSource = cardData.cardImagePath[randomIndex];
+  cardImageID.src = imgSource;
+  var leftPosition = 80 - numberOfPicks;
   setTimeout(function(){
     card.className = 'flipped';
     setTimeout(function() {
       var imgEl = document.createElement('img');
-      imgEl.src = imageID.src;
+      imgEl.src = imgSource;
       imgEl.className = 'oldCard';
       cardContainer.appendChild(imgEl);
-      card.className = 'card';
-    }, 500);
+    }, 1000);
   }, 500);
+  setTimeout(function(){
+    document.getElementById('backImg').src = '';
+    document.getElementById('frontImg').src = '';
+    card.className = 'card';
+  }, 1500);
   newCardValue = cardData.cardValue[randomIndex];
   console.log('The new card value is ' + newCardValue);
   cardData.cardImagePath.splice(randomIndex,1);
@@ -104,7 +113,7 @@ function randomCardGenerator() {
 function userIntro() {
   userPick = 0;
   computerInsult();
-  // imageID.src = pathToDeckOfCardImage;
+  // cardImageID.src = pathToDeckOfCardImage;
   randomCardGenerator();
   textID.textContent = "Will the next card be higher or lower than the card shown?";
   console.log("Will the next card be higher or lower than the card shown?");
@@ -182,7 +191,7 @@ function computerIntro () {
   totalComputerPicks = 0;
   computerInsult();
   randomCardGenerator();
-  // imageID.src = pathToDeckOfCardImage;
+  // cardImageID.src = pathToDeckOfCardImage;
   computerPicker();
 }
 
@@ -196,7 +205,7 @@ function computerIntroNonRandom () {
 function computerIntroPass () {
   totalComputerPicks = 0;
   computerInsult();
-  // imageID.src = pathToDeckOfCardImage;
+  // cardImageID.src = pathToDeckOfCardImage;
   computerPicker();
 }
 
