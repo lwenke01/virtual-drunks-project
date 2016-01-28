@@ -107,14 +107,14 @@ border:2px solid #f00;
 .backgroundContainerMain {
   background-image: url("../img/medwoodheader.jpg");
   background-size: cover;
-  height: 30vw;
+  height: 25vw;
   display: flex;
 
 }
 .logo {
   z-index: 1;
   width:auto;
-  height: 30vw;
+  height: 25vw;
   position: absolute;
   left: 35vw;
 }
@@ -126,8 +126,8 @@ border:2px solid #f00;
   text-shadow: 2px 2px 4px rgba(116, 125, 102, 1);
   display: block;
   position: absolute;
-  left: 65vw;
-  top: 12vw;
+  left: 60vw;
+  top: 9vw;
 }
 
 body {

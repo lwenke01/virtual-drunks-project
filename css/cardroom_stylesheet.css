@@ -5,40 +5,27 @@ body {
 .backgroundContainer {
   background-image: url("../img/medwoodheader.jpg");
   background-size: cover;
-}
-
-.logoContainer {
+  height: 25vw;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
-.logoContainer p {
-  font-size: 15vw;
+.logo {
+  z-index: 1;
+  width:auto;
+  height: 25vw;
+  position: absolute;
+  left: 35vw;
+}
+
+.slogan {
+  font-size: 3vw;
   font-family: 'Amatic SC', cursive;
-  letter-spacing: 10px;
-  margin-bottom: 0.5vw;
-  margin-top: 2vw;
-  color: #D8D8C0;
+  color: white;
   text-shadow: 2px 2px 4px rgba(116, 125, 102, 1);
-}
-
-.sloganContainer {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.sloganContainer {
-  font-size: 2vw;
-  font-family: 'Amatic SC', cursive;
-}
-
-.sloganContainer p {
-  color: #D8D8C0;
-  font-size: 5vw;
-  margin-top: 0;
-  margin-bottom: 1vw;
+  display: block;
+  position: absolute;
+  left: 60vw;
+  top: 9vw;
 }
 
 .containerNav {
@@ -46,23 +33,72 @@ body {
   list-style-type: none;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #D8D8C0;
+  background-color: #6e0000;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .containerNav li a {
-  color: #903030;
+  color: #f0c078;
   text-decoration: none;
   font-size: 2.5vw;
   font-family: 'Montserrat', sans-serif;
+}
+
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+.hvr-buzz {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-buzz:hover, .hvr-buzz:focus, .hvr-buzz:active, .hover-buzz{
+  -webkit-animation-name: hvr-buzz;
+  animation-name: hvr-buzz;
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  animation-fill-mode:
+}
+.hvr-buzz:hover {
+  color: #d86018;
 }
 
 .gameContainer {
   background-image: url("../img/cardroomback2.png");
   height: 700px;
   background-size: cover;
-  background-position: 0px 200px;
+  background-position: 0vw 16vw;
   background-repeat: no-repeat;
   margin-top: 50px;
 
@@ -91,7 +127,7 @@ body {
   width: 45vw;
   height: 20vw;
   left: 38vw;
-  top: 34vw;
+  top: 32vw;
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
@@ -102,7 +138,8 @@ body {
 
 .opponentText {
   position: absolute;
-  left: 40vw;
+  left: 39vw;
+  top: 32vw;
   display: block;
   width: 35vw;
   margin-left: 2vw;
@@ -115,7 +152,7 @@ body {
 .cardsRemaining {
   position: absolute;
   left: 83vw;
-  top: 30.9vw;
+  top: 27.4vw;
   display: block;
   margin-left: 2vw;
   color: white;
