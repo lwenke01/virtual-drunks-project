@@ -3,6 +3,7 @@
 /*jshint -W040 */
 /*jshint -W097 */
 
+
 function newChar(name, path, drinkCommand,insults) {
   this.name = name;
   this.path = path;
@@ -28,7 +29,11 @@ var allCharacters = [
   new newChar('John Belushi', ['../img/belushi2.jpg', '../img/belushi.jpg'], ['Take a drink, you fucking idiot!', 'I\'m jealous, I need that drink not YOU! Drink up!'], ['Time to work on my game.', 'On stage is the only place where I really know what I\'m doing.', 'I\'m John Belushi!', 'Nothing is over until we decide it is! Was it over when the Germans bombed Pearl Harbor? Hell, no!', 'Wise Up!', 'I suggest you go out and buy as many Blues albums as you can.', 'Drinking is no longer challenging.', 'You contemptable pig!', 'I owe it all to little chocolate donuts.', 'Christ, seven years of college, down the drain.'])
 ];
 
-var charIndex = 7; //Temporary variable
+var charIndex = localStorage.getItem('characterchoice');
+console.log(charIndex);
+var drinkChoice = localStorage.getItem('drinkchoice');
+var userName = localStorage.getItem('userName');
+
 
 var cardData = {
   cardImagePath: ['../img/card_images/ace_of_clubs.png','../img/card_images/2_of_clubs.png','../img/card_images/3_of_clubs.png','../img/card_images/4_of_clubs.png','../img/card_images/5_of_clubs.png','../img/card_images/6_of_clubs.png','../img/card_images/7_of_clubs.png','../img/card_images/8_of_clubs.png','../img/card_images/9_of_clubs.png','../img/card_images/10_of_clubs.png','../img/card_images/jack_of_clubs2.png','../img/card_images/queen_of_clubs2.png','../img/card_images/king_of_clubs2.png','../img/card_images/ace_of_spades.png','../img/card_images/2_of_spades.png','../img/card_images/3_of_spades.png','../img/card_images/4_of_spades.png','../img/card_images/5_of_spades.png','../img/card_images/6_of_spades.png','../img/card_images/7_of_spades.png','../img/card_images/8_of_spades.png','../img/card_images/9_of_spades.png','../img/card_images/10_of_spades.png','../img/card_images/jack_of_spades2.png','../img/card_images/queen_of_spades2.png','../img/card_images/king_of_spades2.png','../img/card_images/ace_of_hearts.png','../img/card_images/2_of_hearts.png','../img/card_images/3_of_hearts.png','../img/card_images/4_of_hearts.png','../img/card_images/5_of_hearts.png','../img/card_images/6_of_hearts.png','../img/card_images/7_of_hearts.png','../img/card_images/8_of_hearts.png','../img/card_images/9_of_hearts.png','../img/card_images/10_of_hearts.png','../img/card_images/jack_of_hearts2.png','../img/card_images/queen_of_hearts2.png','../img/card_images/king_of_hearts2.png','../img/card_images/ace_of_diamonds.png','../img/card_images/2_of_diamonds.png','../img/card_images/3_of_diamonds.png','../img/card_images/4_of_diamonds.png','../img/card_images/5_of_diamonds.png','../img/card_images/6_of_diamonds.png','../img/card_images/7_of_diamonds.png','../img/card_images/8_of_diamonds.png','../img/card_images/9_of_diamonds.png','../img/card_images/10_of_diamonds.png','../img/card_images/jack_of_diamonds2.png','../img/card_images/queen_of_diamonds2.png','../img/card_images/king_of_diamonds2.png'],
@@ -123,12 +128,13 @@ function randomCardGenerator() {
     };
     numberOfPicks = 0;
     }
-    localStorage.setItem('cardData',JSON.stringify(cardData));
-    localStorage.setItem('imgSource',imgSource);
-    localStorage.setItem('numberOfPicks',numberOfPicks);
-    localStorage.setItem('cardsRemaining',cardsRemaining);
-    localStorage.setItem('cardsInARow',cardsInARow);
-    localStorage.setItem('turn',turn);
+  localStorage.setItem('cardData',JSON.stringify(cardData));
+  localStorage.setItem('imgSource',imgSource);
+  localStorage.setItem('numberOfPicks',numberOfPicks);
+  localStorage.setItem('cardsRemaining',cardsRemaining);
+  localStorage.setItem('cardsInARow',cardsInARow);
+  localStorage.setItem('turn',turn);
+
 }
 
 function userIntro() {
@@ -137,12 +143,15 @@ function userIntro() {
   highButtonID.style.display = 'inline-block';
   lowButtonID.style.display = 'inline-block';
   opponentID.src = allCharacters[charIndex].path[0];
+  textID.textContent = 'Hey, there ' + userName + '! Let\'s play';
   userPick = 0;
+  setTimeout(function() {
   computerInsult();
   randomCardGenerator();
+},2000);
   setTimeout(function(){
     textID.textContent = "Will the next card be higher or lower than the card shown?";
-  },2000);
+  },4000);
   oldCardValue = newCardValue;
 }
 
