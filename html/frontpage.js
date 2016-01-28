@@ -14,6 +14,7 @@ function buttonClick(){
   localStorage.setItem('drinkchoice', drink[0]);
   localStorage.setItem('characterchoice', character[0]);
   localStorage.setItem('userName', user);
+  console.log('Storing!');
 };
 
 var beerId = document.getElementById('one');
