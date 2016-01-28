@@ -3,6 +3,7 @@
 /*jshint -W040 */
 /*jshint -W097 */
 
+
 function newChar(name, path, drinkCommand,insults) {
   this.name = name;
   this.path = path;
@@ -11,11 +12,11 @@ function newChar(name, path, drinkCommand,insults) {
 }
 
 var allCharacters = [
-  new newChar('Abe Lincoln', ['../img/abe1.png', '../img/abe2.png'], ['Ah, take a drink, friend.', 'It\'s time to take a drink, friend.'], ['Nearly all people can stand adversity, but if you want to test someones character, get them drunk.', 'This will be over before you can say, "Sic semper tyrannis"!','It is not best to swap horses while crossing the river.', 'Four score and seven years years ago, I was drinking your great grandfather\'s ass under the table', 'I destroy my enemies when I get them drunk.']),
+  new newChar('Abe Lincoln', ['../img/abe1.png', '../img/abe2.png'], ['Ah, take a drink, ' + userName + '!', 'It\'s time to take a drink, ' + userName + '!', 'Cheers, loser!', 'Drink, you son of a gun!','Booth can handle a shot better than that!'], ['Nearly all people can stand adversity, but if you want to test someones character, get them drunk.', 'This will be over before you can say, "Sic semper tyrannis"!','It is not best to swap horses while crossing the river.', 'Four score and seven years years ago, I was drinking your great grandfather\'s ass under the table', 'I destroy my enemies when I get them drunk.']),
 
   new newChar('Genghis Khan', ['../img/genghis2.png', '../img/genghis2.png'], ['DRINK!! You mongrel!', 'Drink or die a cowards death!'], ['I am the punishment of God...If you had not committed great sins, God would not have sent a punishment like me upon you.', 'I am the flail of god. Had you not created great sins, god would not have sent a punishment like me upon you.', 'A man\'s greatest joy is crushing his enemies.', 'Come and sip from the cup of destruction.', 'It is not sufficient that I suceed, all others must fail.', 'If you\’re afraid \– don’t do it, \– if you’re doing it \– don\’t be afraid!', 'There is no value in anything until it is finished.', 'Conquering the world is easy, it\'s getting of your horse and drinking that is hard.']),
 
-  new newChar('William Shakespeare', ['../img/shakes1.jpg', '../img/shakes2.jpg'], ['Thou must drink, swine!', 'You scoundrel! Take a drink!'], ['To drink, or not to drink. That is the question.', 'Brevity is the soul of wit, you have none.', 'Do you think I am easier to be played on than a pipe?', 'Thou art like a toad; ugly and venomous.', 'You are a most notable coward, an infinite and endless liar, an hourly promise breaker, the owner of no one good quality.', 'You scullion! You rampallian! You fustilarian! I\’ll tickle your catastrophe!', 'Thou art as loathsome as a toad.', 'Thou are pigeon-liver\’d and lack gall.', 'You are as a candle, the better burnt out.', 'Misery acquaints a man with strange bedfellows.', 'There is nothing either good or bad, but thinking makes it so']),
+  new newChar('William Shakespeare', ['../img/shakes1.png', '../img/shakes2.png'], ['Thou must drink, swine!', 'You scoundrel! Take a drink!'], ['To drink, or not to drink. That is the question.', 'Brevity is the soul of wit, you have none.', 'Do you think I am easier to be played on than a pipe?', 'Thou art like a toad; ugly and venomous.', 'You are a most notable coward, an infinite and endless liar, an hourly promise breaker, the owner of no one good quality.', 'You scullion! You rampallian! You fustilarian! I\’ll tickle your catastrophe!', 'Thou art as loathsome as a toad.', 'Thou are pigeon-liver\’d and lack gall.', 'You are as a candle, the better burnt out.', 'Misery acquaints a man with strange bedfellows.', 'There is nothing either good or bad, but thinking makes it so']),
 
   new newChar('Albert Einstein', ['../img/einsteinnormal.png', '../img/einstein1.png'], ['Take a drink = MC^2.'], ['There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.', 'Logic will get you from A to Z; imagination will get you everywhere.', 'Two things are infinite: the universe and human stupidity; and I\'m not sure about the universe.', 'A clever person solves a problem. A wise person avoids it.', 'The most comprehensible thing about you is that you are incomprehensible.', 'I never think of the future. It comes soon enough. Your failure that is.', 'Not everything that counts can be counted, and not everything that can be counted counts.', 'Weakness of attitude becomes weakness of character.']),
 
@@ -28,7 +29,11 @@ var allCharacters = [
   new newChar('John Belushi', ['../img/belushi2.jpg', '../img/belushi.jpg'], ['Take a drink, you fucking idiot!', 'I\'m jealous, I need that drink not YOU! Drink up!'], ['Time to work on my game.', 'On stage is the only place where I really know what I\'m doing.', 'I\'m John Belushi!', 'Nothing is over until we decide it is! Was it over when the Germans bombed Pearl Harbor? Hell, no!', 'Wise Up!', 'I suggest you go out and buy as many Blues albums as you can.', 'Drinking is no longer challenging.', 'You contemptable pig!', 'I owe it all to little chocolate donuts.', 'Christ, seven years of college, down the drain.'])
 ];
 
-var charIndex = 7; //Temporary variable
+var charIndex = localStorage.getItem('characterchoice');
+console.log(charIndex);
+var drinkChoice = localStorage.getItem('drinkchoice');
+var userName = localStorage.getItem('userName');
+
 
 var cardData = {
   cardImagePath: ['../img/card_images/ace_of_clubs.png','../img/card_images/2_of_clubs.png','../img/card_images/3_of_clubs.png','../img/card_images/4_of_clubs.png','../img/card_images/5_of_clubs.png','../img/card_images/6_of_clubs.png','../img/card_images/7_of_clubs.png','../img/card_images/8_of_clubs.png','../img/card_images/9_of_clubs.png','../img/card_images/10_of_clubs.png','../img/card_images/jack_of_clubs2.png','../img/card_images/queen_of_clubs2.png','../img/card_images/king_of_clubs2.png','../img/card_images/ace_of_spades.png','../img/card_images/2_of_spades.png','../img/card_images/3_of_spades.png','../img/card_images/4_of_spades.png','../img/card_images/5_of_spades.png','../img/card_images/6_of_spades.png','../img/card_images/7_of_spades.png','../img/card_images/8_of_spades.png','../img/card_images/9_of_spades.png','../img/card_images/10_of_spades.png','../img/card_images/jack_of_spades2.png','../img/card_images/queen_of_spades2.png','../img/card_images/king_of_spades2.png','../img/card_images/ace_of_hearts.png','../img/card_images/2_of_hearts.png','../img/card_images/3_of_hearts.png','../img/card_images/4_of_hearts.png','../img/card_images/5_of_hearts.png','../img/card_images/6_of_hearts.png','../img/card_images/7_of_hearts.png','../img/card_images/8_of_hearts.png','../img/card_images/9_of_hearts.png','../img/card_images/10_of_hearts.png','../img/card_images/jack_of_hearts2.png','../img/card_images/queen_of_hearts2.png','../img/card_images/king_of_hearts2.png','../img/card_images/ace_of_diamonds.png','../img/card_images/2_of_diamonds.png','../img/card_images/3_of_diamonds.png','../img/card_images/4_of_diamonds.png','../img/card_images/5_of_diamonds.png','../img/card_images/6_of_diamonds.png','../img/card_images/7_of_diamonds.png','../img/card_images/8_of_diamonds.png','../img/card_images/9_of_diamonds.png','../img/card_images/10_of_diamonds.png','../img/card_images/jack_of_diamonds2.png','../img/card_images/queen_of_diamonds2.png','../img/card_images/king_of_diamonds2.png'],
@@ -123,12 +128,13 @@ function randomCardGenerator() {
     };
     numberOfPicks = 0;
     }
-    localStorage.setItem('cardData',JSON.stringify(cardData));
-    localStorage.setItem('imgSource',imgSource);
-    localStorage.setItem('numberOfPicks',numberOfPicks);
-    localStorage.setItem('cardsRemaining',cardsRemaining);
-    localStorage.setItem('cardsInARow',cardsInARow);
-    localStorage.setItem('turn',turn);
+  localStorage.setItem('cardData',JSON.stringify(cardData));
+  localStorage.setItem('imgSource',imgSource);
+  localStorage.setItem('numberOfPicks',numberOfPicks);
+  localStorage.setItem('cardsRemaining',cardsRemaining);
+  localStorage.setItem('cardsInARow',cardsInARow);
+  localStorage.setItem('turn',turn);
+
 }
 
 function userIntro() {
@@ -137,12 +143,15 @@ function userIntro() {
   highButtonID.style.display = 'inline-block';
   lowButtonID.style.display = 'inline-block';
   opponentID.src = allCharacters[charIndex].path[0];
+  textID.textContent = 'Hey, there ' + userName + '! Let\'s play';
   userPick = 0;
+  setTimeout(function() {
   computerInsult();
   randomCardGenerator();
+},2000);
   setTimeout(function(){
     textID.textContent = "Will the next card be higher or lower than the card shown?";
-  },2000);
+  },4000);
   oldCardValue = newCardValue;
 }
 
@@ -171,7 +180,7 @@ function userHighPick () {
       userIncorrectPick();
     } else {
       setTimeout(function(){
-        textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
+        textID.textContent = 'YOU ARE CORRECT, ' + userName + '! Pick again.';
         passButtonID.style.display = 'inline-block';
       },1700);
     }
@@ -188,7 +197,7 @@ function userLowPick () {
       userIncorrectPick();
     } else {
       setTimeout(function(){
-        textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
+        textID.textContent = 'You are CORRECT, ' + userName + '! Pick again';
         passButtonID.style.display = 'inline-block';
       },1700);
     }
@@ -197,7 +206,7 @@ function userLowPick () {
 
 function userPassPick () {
   setTimeout(function(){
-    textID.textContent = 'PASS TO ME? COWARD.';
+    textID.textContent = 'PASS TO ME, ' + userName + '? COWARD!';
   },1000);
   setTimeout(function(){
     computerIntroPass();
@@ -283,7 +292,7 @@ function computerPicker () {
     },4000);
   } else {
     setTimeout(function(){
-      textID.textContent = 'I Pass to you!';
+      textID.textContent = 'I Pass to you, ' + userName + '!';
       userIntroNonRandom();
     }, 4000);
   }
