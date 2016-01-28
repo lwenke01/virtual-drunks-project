@@ -7,7 +7,7 @@ function buttonClick(){
   // alert('TIME TO PARTAAYY')
   localStorage.setItem('drinkchoice', drink[0]);
   localStorage.setItem('characterchoice', character[0]);
-  // localStorage.setItem('userName',);
+  localStorage.setItem('userName', user);
   // localStorage.setItem('playername', );
 };
 
