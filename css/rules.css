@@ -11,6 +11,7 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin: -60px;
 }
 
 .logoContainer p {
@@ -18,8 +19,15 @@ body {
   font-family: 'Amatic SC', cursive;
   letter-spacing: 10px;
   margin-bottom: 0.5vw;
-  margin-top: 2vw;
-  color: #D8D8C0;
+  margin-top: 0vw;
+  margin-bottom: 2vw;
+  color: darkred;
+  text-shadow:
+     3px 3px 0 white,
+     -1px -1px 0 white,
+     1px -1px 0 white,
+     -1px 1px 0 white,
+     1px 1px 0 white;
 }
 
 .sloganContainer {
@@ -28,30 +36,31 @@ body {
   flex-wrap: wrap;
 }
 
-.sloganContainer {
+/*.sloganContainer {
   font-size: 2vw;
   font-family: 'Amatic SC', cursive;
-}
+}*/
 
-.sloganContainer p {
+/*.sloganContainer p {
   color: #D8D8C0;
   font-size: 5vw;
   margin-top: 0;
   margin-bottom: 1vw;
-}
+}*/
 
 .containerNav {
   display: flex;
   list-style-type: none;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #D8D8C0;
+  background-color: darkred;
   margin-top: 0;
   margin-bottom: 0;
+  border: 2px solid black;
 }
 
 .containerNav li a {
-  color: #903030;
+  color: white;
   text-decoration: none;
   font-size: 2.5vw;
   font-family: 'Montserrat', sans-serif;
@@ -60,8 +69,9 @@ body {
 .rulesContainer {
   display: flex;
   flex-wrap: wrap;
-  background-image: url("../img/alc_background.jpg");
-  height: 800px;
+  background-image: url("http://superretro.com/wp-content/uploads/2014/06/vSg8LG1.jpg");
+  background-repeat: no-repeat;
+  height: 1800px;
 }
 
 .rulesFlexBox1 {
@@ -79,21 +89,22 @@ body {
   position: absolute;
   width: 40vw;
   height: auto;
-  left: 55vw;
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH";
+  left: 8vw;
+  top: 20vw;
+  /*-moz-transform: scaleX(-1);*/
+  /*-o-transform: scaleX(-1);*/
+  /*-webkit-transform: scaleX(-1);*/
+  /*transform: scaleX(-1);*/
+  /*filter: FlipH;*/
+  /*-ms-filter: "FlipH";*/
 }
 
 .rulesText {
   display: block;
   position: absolute;
   z-index: 1;
-  left: 59vw;
-  top: 46vw;
+  left: 15vw;
+  top: 21.5vw;
   width: 30vw;
   font-family: 'Vollkorn', serif;
   font-size: 1.1vw;
