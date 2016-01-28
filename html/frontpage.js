@@ -3,14 +3,31 @@
 var buttonId = document.getElementById('button');
 buttonId.addEventListener('click', buttonClick);
 function buttonClick(){
-  alert('TIME TO PARTAAYY')
+
+  // alert('TIME TO PARTAAYY')
   localStorage.setItem('drinkchoice', drink[0]);
   localStorage.setItem('characterchoice', character[0]);
+  // localStorage.setItem('userName',);
+  // localStorage.setItem('playername', );
+};
+
+var over21No = document.getElementById('no');
+over21No.addEventListener('click', noAnswer);
+function noAnswer(){
+
+
+  // alert('TIME TO PARTAAYY')
+  localStorage.setItem('drinkchoice', drink[0]);
+  localStorage.setItem('characterchoice', character[0]);
+  // localStorage.setItem('userName',);
   // localStorage.setItem('playername', );
 };
 var drink = [];
 var character = [];
+var use
 // below is beer slider bar which stores one of 6 choices in drink[0]
+
+
 var beerId = document.getElementById('one');
 beerId.addEventListener('click', beer);
 function beer(){
@@ -44,6 +61,11 @@ var koolAidId = document.getElementById('six');
 koolAidId.addEventListener('click', koolAid);
 function koolAid(){
   drink[0] = 'koolaid';
+};
+var cocktailId = document.getElementById('seven');
+koolAidId.addEventListener('click', cocktail);
+function koolAid(){
+  drink[0] = 'cocktail';
 };
 
 // adding character selection
