@@ -74,6 +74,10 @@ if (imgSource) {
   numberOfPicks = localStorage.getItem('numberOfPicks');
   turn = localStorage.getItem('turn');
   cardData = JSON.parse(localStorage.getItem('cardData'));
+  charIndex = localStorage.getItem('charIndex');
+  drinkChoice = localStorage.getItem('drinkChoice');
+  userName = localStorage.getItem('userName');
+
   if (turn == 1) {
     console.log('it was your turn');
     userIntroNonRandom();
@@ -134,6 +138,9 @@ function randomCardGenerator() {
   localStorage.setItem('cardsRemaining',cardsRemaining);
   localStorage.setItem('cardsInARow',cardsInARow);
   localStorage.setItem('turn',turn);
+  localStorage.setItem('charIndex',charIndex);
+  localStorage.setItem('drinkChoice',drinkChoice);
+  localStorage.setItem('userName',userName);
 
 }
 
@@ -171,6 +178,9 @@ function userIntroNonRandom() {
 }
 
 function userHighPick () {
+  passButtonID.style.display = 'none';
+  highButtonID.style.display = 'none';
+  lowButtonID.style.display = 'none';
   textID.textContent = '';
   userPick += 1;
   oldCardValue = newCardValue;
@@ -181,6 +191,8 @@ function userHighPick () {
     } else {
       setTimeout(function(){
         textID.textContent = 'YOU ARE CORRECT, ' + userName + '! Pick again.';
+        highButtonID.style.display = 'inline-block';
+        lowButtonID.style.display = 'inline-block';
         passButtonID.style.display = 'inline-block';
       },1700);
     }
@@ -188,6 +200,9 @@ function userHighPick () {
 }
 
 function userLowPick () {
+  passButtonID.style.display = 'none';
+  highButtonID.style.display = 'none';
+  lowButtonID.style.display = 'none';
   textID.textContent = '';
   userPick += 1;
   oldCardValue = newCardValue;
@@ -198,6 +213,8 @@ function userLowPick () {
     } else {
       setTimeout(function(){
         textID.textContent = 'You are CORRECT, ' + userName + '! Pick again';
+        highButtonID.style.display = 'inline-block';
+        lowButtonID.style.display = 'inline-block';
         passButtonID.style.display = 'inline-block';
       },1700);
     }
@@ -205,6 +222,9 @@ function userLowPick () {
 }
 
 function userPassPick () {
+  passButtonID.style.display = 'none';
+  highButtonID.style.display = 'none';
+  lowButtonID.style.display = 'none';
   setTimeout(function(){
     textID.textContent = 'PASS TO ME, ' + userName + '? COWARD!';
   },1000);
