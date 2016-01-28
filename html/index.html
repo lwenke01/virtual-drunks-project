@@ -1,70 +1,121 @@
 <!DOCTYPE html>
 <html>
-<div class="container">
 
-  <head>
-    <link rel="stylesheet" href="page1.css" media="screen" title="no title" charset="utf-8">
-    <title>Homepage</title>
-  </head>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
+  <link href="../css/page1.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="css/page1.css">
+  <title>Homepage</title>
+</head>
 <body>
   <header>
-    <h1 class="slogan">LOGO GOES HERE</h1>
-    <h2 class="slogan">Drink with a cold one</h2 >
-
+    <div class="backgroundContainerMain">
+      <div class="logoContainerMain">
+        <h1>Drink With A Cold One</h1>
+      </div>
+      <div class="sloganContainerMain">
+        <p>A virtual drinking game</p>
+      </div>
+    </div>
+    <!-- <h1 class="slogan">LOGO GOES HERE</h1>
+    <h2 class="slogan">Drink with a cold one</h2 > -->
   </header>
+  <!-- <div class="navbar"> -->
+
+  <div class="container">
     <nav>
-      <ul class="navbar">
-        <li><a href="#">RULES</a></li>
-        <li><a href="#">ABOUT US</a></li>
-        <li><a href="#">ABOUT</a></li>
+      <ul class="containerNav1">
+        <li><a href="index.html" class="current">Home</a></li>
+        <li><a href="rules.html" class="hvr-buzz">Rules</a></li>
+        <li><a href="aboutus.html" class="hvr-buzz">About us</a></li>
       </ul>
     </nav>
-   <div class="forminput">
-    <h2>Welcome to a game of Hi-Low!!! </h2>
-    <h2 class="qname">What is your name?</h2><input type="text" size="15" name="name" id="nameField">
-    <form action="#">
-    <p>Are you 21?</p>
-    <input id="male" type="radio" name="gender" value="male"/>
-    <label for="male">YES</label>
-    <input id="female" type="radio" name="gender" value="female"/>
-    <label for="female">NO</label>
-  </form>
-</div>
-<br><br><br><br><br><br>
-</div>
-      <h2 class="pick">Pick your poison</h2> <div class="switch">
-  <input name="switch" id="one" type="radio" checked/>
-  <label for="one" class="switch__label">Beer</label>
-  <input name="switch" id="two" type="radio"/>
-  <label for="two" class="switch__label">Wine</label>
-  <input name="switch" id="three" type="radio"/>
-  <label for="three" class="switch__label" >Shots</label>
-    <input name="switch" id="four" type="radio" />
-  <label for="four" class="switch__label">Cider</label>
-  <input name="switch" id="four" type="radio" />
-  <label for="five" class="switch__label">Wine-cooler</label>
-  <input name="switch" id="five" type="radio" />
-  <label for="six" class="switch__label">Kool-aid</label>
-  <input name="switch" id="six" type="radio" />
-  <div class="switch__indicator" /></div>
-</div>
-      <p>Pick your partner</p>
-      <ul class="flex-container">
-        <li class="flex-item" id="pic1">1</li>
-        <li class="flex-item" id="pic2">2</li>
-        <li class="flex-item" id="pic3">3</li>
-        <li class="flex-item" id="pic4">4</li>
-        <li class="flex-item" id="pic5">5</li>
-        <li class="flex-item" id="pic6">6</li>
-        <li class="flex-item" id="pic7">7</li>
-        <li class="flex-item" id="pic8">8</li>
-      </ul>
-    <br>
-    <br>
-    <div class="buttoncenter">
-      <button id="button">Click Me!</button>
-<script src='frontpage.js'></script>
+    <div class="intro">
+      <h2 class="h2intro">Welcome to a game of Hi-Low!!! </h2>
+      <p class="pintro">Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing.</p>
     </div>
-  </body>
-  <footer></footer>
+
+
+    <!-- <div class="forminputcontainer">
+    <form action="#"> -->
+    <!-- <form class="question">
+      <h2 class="old">Are you 21?</h2>
+      <div class="switchage">
+        <input name="switchage" id="yes" type="radio" />
+        <label for="yes" class="switchage__label">YES!</label>
+        <input name="switchage" id="no" type="radio" />
+        <label for="no" class="switchage__label">No</label>
+        <div class="switchage__indicator" /></div>
+      </div> -->
+      <!-- <div class="buttoncenter">
+      </div> -->
+    </form>
+    <form id="nameInsert"class="selectionform">
+      <div class="nameinput">
+        <h2 class="qname">What is your name?</h2>
+
+      <!-- <fieldset> -->
+        <!-- <legend><h2 class="qname">What is your name?</h2></legend> -->
+        <label for="nameField"></label>
+        <input type="text" class="textbox" size="15" name="nameField" id="nameField"/>
+        <input type="submit" value="submit">
+      <!-- </fieldset> -->
+      </div>
+
+          <br>
+      <!-- </div> -->
+      <section class="poison">
+        <h2 class="pick">Pick your poison</h2>
+        <div class="switch">
+          <input name="switch" id="one" type="radio" checked/>
+          <label for="one" class="switch__label">Beer</label>
+          <input name="switch" id="two" type="radio"/>
+          <label for="two" class="switch__label">Wine</label>
+          <input name="switch" id="three" type="radio"/>
+          <label for="three" class="switch__label" >Shots!!</label>
+          <input name="switch" id="four" type="radio" />
+          <label for="four" class="switch__label">Cider</label>
+          <input name="switch" id="four" type="radio" />
+          <label for="five" class="switch__label">Wine-cooler</label>
+          <input name="switch" id="five" type="radio" />
+          <label for="seven" class="switch__label">Cocktail</label>
+          <input name="switch" id="seven" type="radio" />
+          <label for="six" class="switch__label">Kool-aid</label>
+          <input name="switch" id="six" type="radio" />
+          <div class="switch__indicator" /></div>
+        </div>
+      </section>
+      <div class="pickpartner">
+        <h2 class="part1">Pick your partner</h2>
+        <div class="partnerselect">
+          <input name="partnerselect" id="pic1" type="radio" checked/>
+          <label for="pic1" class="partnerselect__label"> <figcaption>Abe Lincoln</figcaption><img src="../img/abe2.png">
+          </label>
+          <input name="partnerselect" id="pic2" type="radio"/>
+          <label for="pic2" class="partnerselect__label"><figcaption>Genghis Khan</figcaption><img src="../img/genghis.png">
+          </label>
+          <input name="partnerselect" id="pic3" type="radio"/>
+          <label for="pic3" class="partnerselect__label"><figcaption>Albert Einstein</figcaption><img src="../img/einsteinnormal.png">
+          </label>
+          <input name="partnerselect" id="pic4" type="radio"/>
+          <label for="pic4" class="partnerselect__label"><figcaption>Napoleon</figcaption><img src="../img/napoleon2.png">
+          </label>
+          <input name="partnerselect" id="pic5" type="radio"/>
+          <label for="pic5" class="partnerselect__label"><figcaption>William Shakespeare</figcaption><img src="../img/shakes1.png">
+          </label>
+          <div class="partnerselect__indicator" /></div>
+          <!-- <input type="button" name="name" value=""> -->
+        </div>
+        </div>
+        <!-- <div class="buttoncenter"> -->
+        </section>
+        <button class="buttoncenter" id="button"><a href="../html/cardroom.html"></a>Party Time!</button>
+        <br>
+    </div>
+  </form>
+  <script src='frontpage.js'></script>
+</body>
+<footer>&copy Guzzler Games Enterprises 2016</footer>
 </html>
