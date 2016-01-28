@@ -1,62 +1,247 @@
-h1 {
+body {
   background-color: black;
 }
 
-.tipsyCss {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  font-size: 35px;
-  margin-right: 1500px;
-  background-color: lightgreen;
+.backgroundContainer {
+  background-image: url("../img/medwoodheader.jpg");
+  background-size: cover;
 }
 
-.inebriatedCss {
+.logoContainer {
   display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  font-size: 35px;
-  margin-right: 1500px;
-  background-color: green;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.drunkCss {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  font-size: 35px;
-  margin-right: 1500px;
-  background-color: darkgreen;
+.logoContainer p {
+  font-size: 15vw;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 10px;
+  margin-bottom: 0.5vw;
+  margin-top: 2vw;
+  color: #D8D8C0;
 }
 
-.wastedCss {
+.sloganContainer {
   display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  font-size: 35px;
-  margin-right: 1500px;
-  background-color: yellow;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.shitFacedCss {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  font-size: 35px;
-  margin-right: 1500px;
-  background-color: orange;
+.sloganContainer {
+  font-size: 2vw;
+  font-family: 'Amatic SC', cursive;
 }
 
-.timeToStopCss {
+.sloganContainer p {
+  color: #D8D8C0;
+  font-size: 5vw;
+  margin-top: 0;
+  margin-bottom: 1vw;
+}
+
+.containerNav {
   display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  font-size: 35px;
-  margin-right: 1500px;
+  list-style-type: none;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #D8D8C0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.containerNav li a {
+  color: #903030;
+  text-decoration: none;
+  font-size: 2.5vw;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.gameContainer {
+  background-image: url("../img/alc_background.jpg");
+  height: 800px;
+}
+
+.imageFlexContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1vw;
+  height: 23vw;
+}
+
+.opponentImage {
+  position: absolute;
+  right: 60vw;
+  height: 20vw;
+  width: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 20px;
+}
+
+.wordBubble {
+  position: absolute;
+  width: 45vw;
+  height: 20vw;
+  left: 38vw;
+  top: 32vw;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.opponentText {
+  position: absolute;
+  left: 40vw;
+  display: block;
+  width: 35vw;
+  margin-left: 2vw;
+  color: black;
+  z-index: 1;
+  text-align: center;
+  font-size: 2vw;
+}
+
+.cardsRemaining {
+  position: absolute;
+  left: 83vw;
+  top: 30.9vw;
+  display: block;
+  margin-left: 2vw;
+  color: black;
+  z-index: 1;
+  text-align: right;
+  font-size: 1.5vw;
+  background-color: rgb(216,216,192);
+  background-color: rgba(216,216,192,0.75)
+}
+
+.container {
+  width: 15vw;
+  height: 20vw;
+  position: relative;
+  perspective: 3000px;
+  margin-bottom: 2vw;
+  left: 30vw;
+}
+
+.backImg {
+  width: 15vw;
+  height: 20vw;
+  border-width: 0;
+  position: absolute;
+}
+
+.frontImg {
+  width: 15vw;
+  height: 20vw;
+  border-width: 0;
+  position: absolute;
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1.5s;
+  border-width: 0;
+}
+
+#card figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-width: 0;
+}
+
+.backImgStill {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-width: 0;
+}
+
+#card .front {
+  transform: rotateY( 180deg );
+  border-width: 0;
+}
+
+#card.flipped {
+  transform: rotateY( 180deg ) translate3d(-20vw,0px,0px);
+  z-index: 1
+}
+
+.oldCard {
+  margin: 0;
+  display: block;
+  position: absolute;
+  left: 20vw;
+  width: 100%;
+  height: 100%;
+}
+
+.buttonFlexContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.highButtonID {
+  background-color: blue;
+  border-radius: 10vw;
+  border: none;
+  color: white;
+  padding: 0.75vw 2vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5vw;
+  position: absolute;
+  left: 35vw;
+}
+
+.lowButtonID {
   background-color: red;
+  border-radius: 10vw;
+  border: none;
+  color: white;
+  padding: 0.75vw 2vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5vw;
+  position: absolute;
+  left: 45vw;
 }
 
-/*div {
+.passButtonID {
+  background-color: green;
+  border-radius: 10vw;
+  border: none;
+  color: white;
+  padding: 0.75vw 2vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.5vw;
+  position: absolute;
+  left: 55vw;
+}
+
+footer {
   display: flex;
-  flex-direction: column-reverse;
-}*/
+  flex-direction: row;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+}
