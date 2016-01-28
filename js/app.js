@@ -154,7 +154,7 @@ function userIntroNonRandom() {
   userPick = 0;
   setTimeout(function(){
     computerInsult();
-  },2000);
+  },1000);
   setTimeout(function(){
     textID.textContent = "Will the next card be higher or lower than the card shown?";
   },4500);
@@ -250,19 +250,19 @@ function computerIntroPass () {
   highButtonID.style.display = 'none';
   lowButtonID.style.display = 'none';
   totalComputerPicks = 0;
-  setTimeout(function(){
-    computerInsult();
-    opponentID.src = allCharacters[charIndex].path[0];
-  }, 2000);
+  // setTimeout(function(){
+  //   computerInsult();
+  //   opponentID.src = allCharacters[charIndex].path[0];
+  // }, 2000);
   setTimeout(function(){
     computerPicker();
   }, 4000);
 }
 
 function computerPicker () {
-  // setTimeout(function(){
-  //   computerInsult();
-  // }, 1000);
+  setTimeout(function(){
+    computerInsult();
+  }, 1000);
   computerChoice();
   if (computerPick === 1 || computerPick === 2) {
     oldCardValue = newCardValue;
