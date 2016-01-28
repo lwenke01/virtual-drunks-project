@@ -70,6 +70,7 @@ if (imgSource) {
   cardsInARow = localStorage.getItem('cardsInARow');
   numberOfPicks = localStorage.getItem('numberOfPicks');
   turn = localStorage.getItem('turn');
+  cardData = JSON.parse(localStorage.getItem('cardData'));
   if (turn == 1) {
     console.log('it was your turn');
     userIntroNonRandom();
@@ -78,6 +79,7 @@ if (imgSource) {
     computerIntroNonRandom();
   }
 } else {
+  localStorage.clear();
   userIntro();
 }
 
@@ -133,6 +135,7 @@ function randomCardGenerator() {
     };
     numberOfPicks = 0;
     }
+    localStorage.setItem('cardData',JSON.stringify(cardData));
     localStorage.setItem('imgSource',imgSource);
     localStorage.setItem('numberOfPicks',numberOfPicks);
     localStorage.setItem('cardsRemaining',cardsRemaining);
