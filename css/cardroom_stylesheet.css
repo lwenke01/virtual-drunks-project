@@ -71,7 +71,7 @@ body {
 
 .opponentImage {
   position: absolute;
-  left: 20vw;
+  right: 60vw;
   height: 20vw;
   width: auto;
   background-color: rgb(0,0,0);
