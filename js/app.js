@@ -1,4 +1,7 @@
-// 'use strict';
+'use strict';
+/*jshint -W117 */
+/*jshint -W040 */
+/*jshint -W097 */
 
 function newChar(name, path, drinkCommand, soberQuotes, insults, winLose) {
   this.name = name;
@@ -44,30 +47,57 @@ var userCardValue = 0;
 var totalUserDrinks = 0;
 var userPick = 0;
 var numberOfPicks = 0;
-var tempDrinks = 0;
+var cardsInARow = 0;
+var cardsRemaining = cardData.cardImagePath.length;
+var turn = 1;
 
 var textID = document.getElementById('opponentText');
 var opponentID = document.getElementById('opponentImage');
 var cardImageID = document.getElementById('frontImg');
 var card = document.getElementById('card');
 var cardContainer = document.getElementById('container');
+var highButtonID = document.getElementById('highButtonID');
+var lowButtonID = document.getElementById('lowButtonID');
+var passButtonID = document.getElementById('passButtonID');
+var cardsRemainingID = document.getElementById('cardsRemaining');
+
+var imgSource = localStorage.getItem('imgSource');
+if (imgSource) {
+  console.log('LOADING LOCAL STORAGE');
+  cardImageID.src = imgSource;
+  card.className = 'flipped';
+  cardsRemaining = localStorage.getItem('cardsRemaining');
+  cardsInARow = localStorage.getItem('cardsInARow');
+  numberOfPicks = localStorage.getItem('numberOfPicks');
+  turn = localStorage.getItem('turn');
+  if (turn == 1) {
+    console.log('it was your turn');
+    userIntroNonRandom();
+  } else {
+    console.log('it was their turn');
+    computerIntroNonRandom();
+  }
+} else {
+  userIntro();
+}
 
 function computerSober () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].soberQuotes.length));
-  console.log(allCharacters[charIndex].soberQuotes[quoteIndex]);
   textID.textContent = allCharacters[charIndex].soberQuotes[quoteIndex];
 }
 
 function computerInsult () {
-  // opponentID.src = allCharacters[charIndex].path[1];
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].insults.length));
-  console.log(allCharacters[charIndex].insults[quoteIndex]);
   textID.textContent = allCharacters[charIndex].insults[quoteIndex];
+}
+
+function computerDrinkCommand () {
+  var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].drinkCommand.length));
+  textID.textContent = allCharacters[charIndex].drinkCommand[quoteIndex];
 }
 
 function computerWinLose () {
   var quoteIndex = Math.floor(Math.random() * (allCharacters[charIndex].winLose.length));
-  console.log(allCharacters[charIndex].winLose[quoteIndex]);
   textID.textContent = allCharacters[charIndex].winLose[quoteIndex];
 }
 
@@ -75,7 +105,6 @@ function randomCardGenerator() {
   var randomIndex = Math.floor(Math.random() * (cardData.cardValue.length));
   var imgSource = cardData.cardImagePath[randomIndex];
   cardImageID.src = imgSource;
-  var leftPosition = 80 - numberOfPicks;
   setTimeout(function(){
     card.className = 'flipped';
     setTimeout(function() {
@@ -91,12 +120,12 @@ function randomCardGenerator() {
     card.className = 'card';
   }, 1600);
   newCardValue = cardData.cardValue[randomIndex];
-  console.log('The new card value is ' + newCardValue);
   cardData.cardImagePath.splice(randomIndex,1);
   cardData.cardValue.splice(randomIndex,1);
   numberOfPicks += 1;
-  tempDrinks += 1;
-  console.log('The number of picks are ' + numberOfPicks);
+  cardsRemaining -= 1;
+  cardsInARow += 1;
+  cardsRemainingID.textContent = cardsRemaining + ' Cards Remaining';
   if (numberOfPicks > 51) {
     cardData = {
       cardImagePath: ['../img/card_images/ace_of_clubs.png','../img/card_images/2_of_clubs.png','../img/card_images/3_of_clubs.png','../img/card_images/4_of_clubs.png','../img/card_images/5_of_clubs.png','../img/card_images/6_of_clubs.png','../img/card_images/7_of_clubs.png','../img/card_images/8_of_clubs.png','../img/card_images/9_of_clubs.png','../img/card_images/10_of_clubs.png','../img/card_images/jack_of_clubs2.png','../img/card_images/queen_of_clubs2.png','../img/card_images/king_of_clubs2.png','../img/card_images/ace_of_spades.png','../img/card_images/2_of_spades.png','../img/card_images/3_of_spades.png','../img/card_images/4_of_spades.png','../img/card_images/5_of_spades.png','../img/card_images/6_of_spades.png','../img/card_images/7_of_spades.png','../img/card_images/8_of_spades.png','../img/card_images/9_of_spades.png','../img/card_images/10_of_spades.png','../img/card_images/jack_of_spades2.png','../img/card_images/queen_of_spades2.png','../img/card_images/king_of_spades2.png','../img/card_images/ace_of_hearts.png','../img/card_images/2_of_hearts.png','../img/card_images/3_of_hearts.png','../img/card_images/4_of_hearts.png','../img/card_images/5_of_hearts.png','../img/card_images/6_of_hearts.png','../img/card_images/7_of_hearts.png','../img/card_images/8_of_hearts.png','../img/card_images/9_of_hearts.png','../img/card_images/10_of_hearts.png','../img/card_images/jack_of_hearts2.png','../img/card_images/queen_of_hearts2.png','../img/card_images/king_of_hearts2.png','../img/card_images/ace_of_diamonds.png','../img/card_images/2_of_diamonds.png','../img/card_images/3_of_diamonds.png','../img/card_images/4_of_diamonds.png','../img/card_images/5_of_diamonds.png','../img/card_images/6_of_diamonds.png','../img/card_images/7_of_diamonds.png','../img/card_images/8_of_diamonds.png','../img/card_images/9_of_diamonds.png','../img/card_images/10_of_diamonds.png','../img/card_images/jack_of_diamonds2.png','../img/card_images/queen_of_diamonds2.png','../img/card_images/king_of_diamonds2.png'],
@@ -104,9 +133,18 @@ function randomCardGenerator() {
     };
     numberOfPicks = 0;
     }
+    localStorage.setItem('imgSource',imgSource);
+    localStorage.setItem('numberOfPicks',numberOfPicks);
+    localStorage.setItem('cardsRemaining',cardsRemaining);
+    localStorage.setItem('cardsInARow',cardsInARow);
+    localStorage.setItem('turn',turn);
 }
 
 function userIntro() {
+  turn = 1;
+  cardsInARow = 0;
+  highButtonID.style.display = 'inline-block';
+  lowButtonID.style.display = 'inline-block';
   opponentID.src = allCharacters[charIndex].path[0];
   userPick = 0;
   computerInsult();
@@ -118,6 +156,9 @@ function userIntro() {
 }
 
 function userIntroNonRandom() {
+  turn = 1;
+  highButtonID.style.display = 'inline-block';
+  lowButtonID.style.display = 'inline-block';
   opponentID.src = allCharacters[charIndex].path[0];
   userPick = 0;
   setTimeout(function(){
@@ -128,10 +169,6 @@ function userIntroNonRandom() {
   },4500);
   oldCardValue = newCardValue;
 }
-
-highButtonID.addEventListener('click',userHighPick);
-lowButtonID.addEventListener('click',userLowPick);
-passButtonID.addEventListener('click',userPassPick);
 
 function userHighPick () {
   textID.textContent = '';
@@ -144,7 +181,7 @@ function userHighPick () {
     } else {
       setTimeout(function(){
         textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
-        document.getElementById('passButtonID').style.display = 'inline-block';
+        passButtonID.style.display = 'inline-block';
       },1700);
     }
   },800);
@@ -161,7 +198,7 @@ function userLowPick () {
     } else {
       setTimeout(function(){
         textID.textContent = 'YOU ARE CORRECT, PICK AGAIN';
-        document.getElementById('passButtonID').style.display = 'inline-block';
+        passButtonID.style.display = 'inline-block';
       },1700);
     }
   },800);
@@ -178,11 +215,13 @@ function userPassPick () {
 
 function userIncorrectPick() {
   setTimeout(function(){
-    textID.textContent = 'WRONG! DRINK ' + (tempDrinks + 1) + ' drinks!';
+    computerDrinkCommand();
     opponentID.src = allCharacters[charIndex].path[1];
+    passButtonID.style.display = 'none';
+    highButtonID.style.display = 'none';
+    lowButtonID.style.display = 'none';
   },1700);
-  totalUserDrinks += tempDrinks;
-  tempDrinks = 0;
+  totalUserDrinks += cardsInARow;
   setTimeout(function(){
     computerIntroNonRandom();
   },4000);
@@ -198,24 +237,12 @@ function computerChoice () {
   }
 }
 
-
-function computerIntro() {
-  document.getElementById('passButtonID').style.display = 'none';
-  totalComputerPicks = 0;
-  setTimeout(function(){
-    computerInsult();
-    opponentID.src = allCharacters[charIndex].path[0];
-  }, 2000);
-  setTimeout(function(){
-    randomCardGenerator();
-  }, 4000);
-  setTimeout(function(){
-    computerPicker();
-  }, 4000);
-}
-
 function computerIntroNonRandom () {
-  document.getElementById('passButtonID').style.display = 'none';
+  turn = 2;
+  cardsInARow = 0;
+  passButtonID.style.display = 'none';
+  highButtonID.style.display = 'none';
+  lowButtonID.style.display = 'none';
   totalComputerPicks = 0;
   setTimeout(function(){
     computerInsult();
@@ -227,7 +254,10 @@ function computerIntroNonRandom () {
 }
 
 function computerIntroPass () {
-  document.getElementById('passButtonID').style.display = 'none';
+  turn = 2;
+  passButtonID.style.display = 'none';
+  highButtonID.style.display = 'none';
+  lowButtonID.style.display = 'none';
   totalComputerPicks = 0;
   setTimeout(function(){
     computerInsult();
@@ -300,17 +330,17 @@ function computerNewCard () {
 
 function computerIncorrectPick () {
   opponentID.src = allCharacters[charIndex].path[1];
-  textID.textContent = 'NO, I was wrong.  I will drink ' + (tempDrinks + 1) + ' drinks.';
+  textID.textContent = 'NO, I was wrong.  I will drink ' + cardsInARow + ' drinks.';
   setTimeout(function(){
     computerWinLose();
   },2000);
-  totalComputerDrinks += tempDrinks;
-  tempDrinks = 0;
-  console.log('The total computer drinks are ' + totalComputerDrinks);
-  document.getElementById('passButtonID').style.display = 'none';
+  totalComputerDrinks += cardsInARow;
   setTimeout(function(){
+    cardsInARow = 0;
     userIntroNonRandom();
   }, 4000);
 }
 
-userIntro();
+highButtonID.addEventListener('click',userHighPick);
+lowButtonID.addEventListener('click',userLowPick);
+passButtonID.addEventListener('click',userPassPick);
