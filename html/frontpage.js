@@ -1,6 +1,12 @@
 "use strict"
 
-// localStorage.clear();
+var charIndex = localStorage.getItem('charIndex');
+if (charIndex) {
+  var drinkChoice = localStorage.getItem('drinkChoice');
+  var userName = localStorage.getItem(userName);
+} else {
+  localStorage.clear();
+}
 
 var drink = [];
 var character = [];
@@ -11,10 +17,9 @@ buttonId.addEventListener('click', buttonClick);
 function buttonClick(){
   var user = document.getElementById('nameField').value;
 
-  localStorage.setItem('drinkchoice', drink[0]);
-  localStorage.setItem('characterchoice', character[0]);
+  localStorage.setItem('drinkChoice', drink[0]);
+  localStorage.setItem('charIndex', character[0]);
   localStorage.setItem('userName', user);
-  console.log('Storing!');
 };
 
 var beerId = document.getElementById('one');
