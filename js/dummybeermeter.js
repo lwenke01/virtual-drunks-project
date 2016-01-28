@@ -361,36 +361,36 @@ var boozeMeter10 = document.getElementById('glass10');
 
 function addGlasses() {
   if (totalUserDrinks == 1) {
-    boozeMeter1.innerHTML = drinkType[2];
+    boozeMeter1.innerHTML = drinkType[0];
     console.log(totalUserDrinks);
   } else if (totalUserDrinks == 2) {
-    boozeMeter2.innerHTML = drinkType[2];
+    boozeMeter2.innerHTML = drinkType[0];
     console.log(totalUserDrinks);
   } else if (totalUserDrinks == 3) {
-    boozeMeter3.innerHTML = drinkType[2];
+    boozeMeter3.innerHTML = drinkType[0];
     console.log(totalUserDrinks);
   } else if (totalUserDrinks == 4) {
-    boozeMeter4.innerHTML = drinkType[2];
+    boozeMeter4.innerHTML = drinkType[0];
     console.log(totalUserDrinks);
   } else if (totalUserDrinks == 5) {
-    boozeMeter5.innerHTML = drinkType[2];
+    boozeMeter5.innerHTML = drinkType[0];
     console.log(totalUserDrinks);
   } else if (totalUserDrinks == 6) {
-    boozeMeter6.innerHTML = drinkType[2];
+    boozeMeter6.innerHTML = drinkType[0];
     console.log(totalUserDrinks);
   } else if (totalUserDrinks == 7) {
-    boozeMeter7.innerHTML = drinkType[2];
+    boozeMeter7.innerHTML = drinkType[0];
     console.log(totalUserDrinks);
   } else if (totalUserDrinks == 8) {
-    boozeMeter8.innerHTML = drinkType[2];
+    boozeMeter8.innerHTML = drinkType[0];
     console.log(totalUserDrinks);
   } else if (totalUserDrinks == 9) {
-    boozeMeter9.innerHTML = drinkType[2];
+    boozeMeter9.innerHTML = drinkType[0];
     console.log(totalUserDrinks);
   } else if (totalUserDrinks >= 10) {
-    boozeMeter10.innerHTML = drinkType[2];
+    boozeMeter10.innerHTML = drinkType[0];
     console.log(totalUserDrinks);
   }
 };
 
-var drinkType = ['<img src="../img/meter_glasses/beer.png">', '<img src="../img/meter_glasses/wine.png">', '<img src="../img/meter_glasses/booze.png">']
+var drinkType = ['<img src="../img/meter_glasses/beer.png">', '<img src="../img/meter_glasses/wine.png">', '<img src="../img/meter_glasses/booze.png">'];
