@@ -29,9 +29,8 @@ var allCharacters = [
   new newChar('John Belushi', ['../img/belushi2.jpg', '../img/belushi.jpg'], ['Take a drink, you fucking idiot!', 'I\'m jealous, I need that drink not YOU! Drink up!'], ['Time to work on my game.', 'On stage is the only place where I really know what I\'m doing.', 'I\'m John Belushi!', 'Nothing is over until we decide it is! Was it over when the Germans bombed Pearl Harbor? Hell, no!', 'Wise Up!', 'I suggest you go out and buy as many Blues albums as you can.', 'Drinking is no longer challenging.', 'You contemptable pig!', 'I owe it all to little chocolate donuts.', 'Christ, seven years of college, down the drain.'])
 ];
 
-var charIndex = localStorage.getItem('characterchoice');
-console.log(charIndex);
-var drinkChoice = localStorage.getItem('drinkchoice');
+var charIndex = localStorage.getItem('charIndex');
+var drinkChoice = localStorage.getItem('drinkChoice');
 var userName = localStorage.getItem('userName');
 
 
@@ -212,7 +211,7 @@ function userLowPick () {
       userIncorrectPick();
     } else {
       setTimeout(function(){
-        textID.textContent = 'You are CORRECT, ' + userName + '! Pick again';
+        textID.textContent = 'You are CORRECT ' + userName + '! Pick again';
         highButtonID.style.display = 'inline-block';
         lowButtonID.style.display = 'inline-block';
         passButtonID.style.display = 'inline-block';
@@ -346,6 +345,7 @@ function computerNewCard () {
 
 function computerIncorrectPick () {
   opponentID.src = allCharacters[charIndex].path[1];
+  console.log(cardsInARow);
   textID.textContent = 'NO, I was wrong.  I will drink ' + cardsInARow + ' drinks.';
   totalComputerDrinks += cardsInARow;
   setTimeout(function(){
