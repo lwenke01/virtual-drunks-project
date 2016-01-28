@@ -1,4 +1,7 @@
 "use strict"
+
+// localStorage.clear();
+
 var drink = [];
 var character = [];
 
