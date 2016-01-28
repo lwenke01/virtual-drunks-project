@@ -177,6 +177,7 @@ body {
 
 #card.flipped {
   transform: rotateY( 180deg ) translate3d(-20vw,0px,0px);
+  z-index: 1
 }
 
 .oldCard {
