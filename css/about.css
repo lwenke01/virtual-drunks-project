@@ -121,7 +121,7 @@ main {
   display: flex;
   flex-direction: column;
   background-color: purple;
-  min-height: 900px;
+  min-height: 1100px;
 }
 
 img {
@@ -152,11 +152,11 @@ footer {
 
 .bioMars {
   position: absolute;
-  top: 780px;
+  top: 880px;
   left: 21%;
   right: 50%;
   color: white;
-  font-size: 18px;
+  font-size: 1.8vw;
   text-shadow:
  -1px -1px 0 #000,
   1px -1px 0 #000,
@@ -166,10 +166,10 @@ footer {
 
 .bioJoe {
   position: absolute;
-  top: 400px;
+  top: 340px;
   left: 72%;
   color: white;
-  font-size: 18px;
+  font-size: 1.8vw;
   text-shadow:
  -1px -1px 0 #000,
   1px -1px 0 #000,
@@ -179,11 +179,11 @@ footer {
 
 .bioLisa {
   position: absolute;
-  top: 410px;
+  top: 340px;
   left: 21%;
   right: 50%;
   color: white;
-  font-size: 18px;
+  font-size: 1.8vw;
   text-shadow:
  -1px -1px 0 #000,
   1px -1px 0 #000,
@@ -193,10 +193,10 @@ footer {
 
 .bioKyle {
   position: absolute;
-  top: 780px;
-  left: 72%;
+  top: 880px;
+  left: 71%;
   color: white;
-  font-size: 18px;
+  font-size: 1.8vw;
   text-shadow:
  -1px -1px 0 #000,
   1px -1px 0 #000,
@@ -206,26 +206,26 @@ footer {
 
 #marshall {
   position: absolute;
-  left: 50px;
-  top: 740px;
+  left: 0px;
+  top: 900px;
 }
 
 #lisa {
   position: absolute;
-  left: 50px;
-  top: 320px;
+  left: 0px;
+  top: 360px;
 }
 
 #joe {
   position: relative;
-  left: 189px;
-  top: 20px;
+  left: 48%;
+  top: 60px;
 }
 
 #kyle {
   position: relative;
-  left: 133px;
-  top: 85px;
+  left: 18%;
+  top: 225px;
 
 }
 
@@ -233,8 +233,8 @@ footer {
   font-size: 30px;
   font-family: Candal;
   position: relative;
-  top: 0px;
-  left: 260px;
+  top: -30px;
+  left: 160px;
   -webkit-text-stroke: 1px black;
  color: white;
  text-shadow:
@@ -249,7 +249,7 @@ footer {
   font-size: 30px;
   font-family: Candal;
   position: relative;
-  top: 0px;
+  top: -30px;
   left: 70px;
   -webkit-text-stroke: 1px black;
  color: white;
@@ -265,8 +265,8 @@ footer {
   font-size: 30px;
   font-family: Candal;
   position: relative;
-  top: 30px;
-  left: 200px;
+  top: 120px;
+  left: 60px;
   -webkit-text-stroke: 1px black;
  color: white;
  text-shadow:
@@ -281,8 +281,8 @@ footer {
   font-size: 30px;
   font-family: Candal;
   position: relative;
-  top: 30px;
-  left: -70px;
+  top: 130px;
+  left: -120px;
   -webkit-text-stroke: 1px black;
  color: white;
  text-shadow:
