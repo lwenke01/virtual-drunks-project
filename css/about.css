@@ -1,66 +1,7 @@
-.colorb img{
-filter: grayscale(100%);
--webkit-filter: grayscale(100%);
--webkit-transition: all 1s ease;
+#logo {
+border: none;
 }
 
-.colorb img:hover{
-filter: grayscale(0%);
-filter: gray;
--webkit-filter: grayscale(0%);
-filter: none;
-transition: 1s ease;
-}
-
-/*GROW*/
-.grow img {
-  height: 360px;
-  width: 290px;
-
-  -webkit-transition: all 1s ease;
-     -moz-transition: all 1s ease;
-       -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-          transition: all 1s ease;
-}
-
-.grow img:hover {
-  width: 400px;
-  height: 400px;
-}
-/*shrink picture */
-.shrink img {
-  height: 360px;
-  width: 290px;
-
-  -webkit-transition: all 1s ease;
-     -moz-transition: all 1s ease;
-       -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-          transition: all 1s ease;
-}
-
-.shrink img:hover {
-  width: 160px;
-  height: 220px;
-}
-/* morph picture */
-.morph {
-  -webkit-transition: all 0.5s ease;
-     -moz-transition: all 0.5s ease;
-       -o-transition: all 0.5s ease;
-      -ms-transition: all 0.5s ease;
-          transition: all 0.5s ease;
-}
-
-.morph:hover {
-  border-radius: 90%;
-  -webkit-transform: rotate(360deg);
-     -moz-transform: rotate(360deg);
-       -o-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
-}
 
 body {
 margin-top: 0;
@@ -76,7 +17,7 @@ header {
   max-height: 260px;
 }
 
-h1 {
+/*h1 {
   position: relative;
   top: -10px;
   text-align: center;
@@ -90,7 +31,7 @@ h1 {
      1px -1px 0 white,
      -1px 1px 0 white,
      1px 1px 0 white;
-}
+}*/
 
 nav {
   min-height: 38px;
@@ -121,12 +62,12 @@ main {
   display: flex;
   flex-direction: column;
   background-color: purple;
-  min-height: 1100px;
+  min-height: 1400px;
 }
 
-img {
-  width: 290px;
-  height: 360px;
+img{
+  width: 18vw;
+  height: 41vh;
   border: 2px solid black;
   border-radius: 500px;
 }
@@ -152,29 +93,27 @@ footer {
 
 .bioMars {
   position: absolute;
-  top: 880px;
+  top: 120%;
   left: 21%;
   right: 50%;
-  color: white;
-  font-size: 1.8vw;
-  text-shadow:
- -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-   1px 1px 0 #000;
+  font-size: 2.2vw;
+
+   font-family: 'Amatic SC', cursive;
+   letter-spacing: 5px;
+   color: #D8D8C0;
+   text-shadow: 2px 2px 4px rgba(116, 125, 102, 1);
 }
 
 .bioJoe {
   position: absolute;
   top: 340px;
   left: 72%;
-  color: white;
-  font-size: 1.8vw;
-  text-shadow:
- -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-   1px 1px 0 #000;
+  font-size: 2.2vw;
+
+   font-family: 'Amatic SC', cursive;
+   letter-spacing: 5px;
+   color: #D8D8C0;
+   text-shadow: 2px 2px 4px rgba(116, 125, 102, 1);
 }
 
 .bioLisa {
@@ -182,59 +121,57 @@ footer {
   top: 340px;
   left: 21%;
   right: 50%;
-  color: white;
-  font-size: 1.8vw;
-  text-shadow:
- -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-   1px 1px 0 #000;
+  font-size: 2.2vw;
+
+   font-family: 'Amatic SC', cursive;
+   letter-spacing: 5px;
+   color: #D8D8C0;
+   text-shadow: 2px 2px 4px rgba(116, 125, 102, 1);
 }
 
 .bioKyle {
   position: absolute;
-  top: 880px;
+  top: 120%;
   left: 71%;
-  color: white;
-  font-size: 1.8vw;
-  text-shadow:
- -1px -1px 0 #000,
-  1px -1px 0 #000,
-  -1px 1px 0 #000,
-   1px 1px 0 #000;
+  font-size: 2.2vw;
+
+   font-family: 'Amatic SC', cursive;
+   letter-spacing: 5px;
+   color: #D8D8C0;
+   text-shadow: 2px 2px 4px rgba(116, 125, 102, 1);
 }
 
 #marshall {
-  position: absolute;
-  left: 0px;
-  top: 900px;
+  position: relative;
+  left: -1vw;
+  top: 40vh;
 }
 
 #lisa {
-  position: absolute;
-  left: 0px;
-  top: 360px;
+  position: relative;
+  left: -1vw;
+  top: 6vh;
 }
 
 #joe {
   position: relative;
-  left: 48%;
-  top: 60px;
+  left: 3.5vw;
+  top: 6vh;
 }
 
 #kyle {
   position: relative;
-  left: 18%;
-  top: 225px;
+  left: -4vw;
+  top: 40vh;
 
 }
 
 .nameLisa {
-  font-size: 30px;
+  font-size: 4vh;
   font-family: Candal;
   position: relative;
-  top: -30px;
-  left: 160px;
+  left: -6vw;
+  top: -2vh;
   -webkit-text-stroke: 1px black;
  color: white;
  text-shadow:
@@ -246,11 +183,11 @@ footer {
 }
 
 .nameJoe {
-  font-size: 30px;
+  font-size: 4vh;
   font-family: Candal;
   position: relative;
-  top: -30px;
-  left: 70px;
+  top: -2vh;
+  left: -2vw;
   -webkit-text-stroke: 1px black;
  color: white;
  text-shadow:
@@ -262,11 +199,11 @@ footer {
 }
 
 .nameMars {
-  font-size: 30px;
+  font-size: 4vh;
   font-family: Candal;
   position: relative;
-  top: 120px;
-  left: 60px;
+  top: 21vh;
+  left: -8vw;
   -webkit-text-stroke: 1px black;
  color: white;
  text-shadow:
@@ -278,11 +215,12 @@ footer {
 }
 
 .nameKyle {
-  font-size: 30px;
+
+  font-size: 4vh;
   font-family: Candal;
   position: relative;
-  top: 130px;
-  left: -120px;
+  top: 21vh;
+  left: -12vw;
   -webkit-text-stroke: 1px black;
  color: white;
  text-shadow:
