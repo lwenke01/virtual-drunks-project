@@ -1,28 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="../css/dummymeter.css" rel="stylesheet" type="text/css"/>
-    <title>dummy page</title>
-  </head>
+<head>
+  <title>Cardroom</title>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
+  <link href="../css/dummymeter.css" rel="stylesheet" type="text/css"/>
+</head>
   <body>
-    <h1>filler</h1>
-    <p></p>
-
-    <button id="button" type="button" name="button">Assuming we lose</button>
-
-    <section id="meterContainer">
-
-    </section>
-
-    <div id="timeToStop"></div>
-    <div id="shitFaced"></div>
-    <div id="wasted"></div>
-    <div id="drunk"></div>
-    <div id="inebriated"></div>
-    <div id="tipsy"></div>
-
-
-
-    <script src="../js/dummybeermeter.js"></script>
+    <div id="page">
+      <header>
+        <div class="backgroundContainer">
+          <div class="logoContainer">
+            <p>Cardroom</p>
+          </div>
+          <div class="sloganContainer">
+            <p>Drink with a cold one!</p>
+          </div>
+        </div>
+        <nav>
+          <ul class="containerNav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rules.html">Rules</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="gameContainer">
+        <div class="imageFlexContainer">
+          <img id="opponentImage" class="opponentImage" />
+          <img class="wordBubble" src="../img/wordbubble2.png" />
+          <p id="opponentText" class="opponentText"></p>
+          <p id="cardsRemaining" class="cardsRemaining"></p>
+        </div>
+        <div class="container" id="container">
+          <img class="backImgStill" src="../img/card_images/card_back.jpg"/>
+          <div id="card" class="card">
+            <figure class="back"><img class="backImg" id="backImg" src="../img/card_images/card_back.jpg"/></figure>
+            <figure class="front"><img class="frontImg" id="frontImg" /></figure>
+          </div>
+        </div>
+        <div class="buttonFlexContainer">
+          <button type="button" class="highButtonID" id="highButtonID">High</button>
+          <button type="button" class="lowButtonID" id="lowButtonID">Low</button>
+          <button type="button" class="passButtonID" id="passButtonID" style="display:none">Pass</button>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div id="glass1"></div>
+      <div id="glass2"></div>
+      <div id="glass3"></div>
+      <div id="glass4"></div>
+      <div id="glass5"></div>
+      <div id="glass6"></div>
+      <div id="glass7"></div>
+      <div id="glass8"></div>
+      <div id="glass9"></div>
+      <div id="glass10"></div>
+    </footer>
+    <script src="../js/dummybeermeter.js" type="text/javascript"></script>
   </body>
 </html>
