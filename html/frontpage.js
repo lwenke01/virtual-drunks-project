@@ -22,6 +22,12 @@ function buttonClick(){
   localStorage.setItem('userName', user);
 };
 
+var clearLSID = document.getElementById('clearLS');
+clearLSID.addEventListener('click',clearLS);
+function clearLS() {
+  localStorage.clear();
+}
+
 var beerId = document.getElementById('one');
 beerId.addEventListener('click', beer);
 function beer(){
@@ -102,6 +108,16 @@ var picture8 = document.getElementById('pic8');
 picture8.addEventListener('click', opponent8);
 function opponent8(){
   character[0] = 7;
+};
+var picture9 = document.getElementById('pic9');
+picture9.addEventListener('click', opponent9);
+function opponent9(){
+  character[0] = 8;
+};
+var picture10 = document.getElementById('pic10');
+picture10.addEventListener('click', opponent10);
+function opponent10(){
+  character[0] = 9;
 };
 
 
