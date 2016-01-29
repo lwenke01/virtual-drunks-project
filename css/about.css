@@ -100,17 +100,31 @@ body {
   flex-wrap: wrap;
   background-image: url(http://www.squareonebrewery.com/wp-content/themes/SQ1websiteWP-theme/images/woodbackground.jpg);
   color: white;
+  font-size: 2vw;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(116, 125, 102, 1);
+  font-family: 'Amatic SC', cursive;
 }
 
 .aboutContainer h5 {
-  font-size: 2vw;
+  font-size: 3vw;
+  background-color: rgba(240,192,120,0.4);
+  z-index: 1;
+  justify-content: center;
+  text-align: center;
+  /*flex-direction: row;*/
+  margin-top: 40px;
+  color:#6e0000;}
+
 }
+
 
 .lisaSection {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 2vw;
+
 }
 
 .joeSection {
@@ -129,78 +143,50 @@ body {
 
 .kyleSection {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around;;
   flex-wrap: wrap;
   margin: 2vw;
 }
 
 .lisaImg {
-  background-image: url('../img/lisa.jpg');
-  background-size: 15vw 25vw;
-  width: 15vw;
-  height: 25vw;
-  border-radius: 10vw;
-  margin-right: 2vw;
-}
-
-.lisaImg:hover {
   background-image: url('../img/lisa_drink.jpg');
+  background-size: 130%;
+  background-position: top center;
   width: 15vw;
-  height: 25vw;
-  border-radius: 10vw;
-  margin-right: 2vw;
-}
+  height: 20vw;
+  border-radius: 5vw;}
+
+
 
 .joeImg {
-  background-image: url('../img/joe.jpg');
-  background-size: 15vw 25vw;
-  width: 15vw;
-  height: 25vw;
-  border-radius: 10vw;
-  margin-right: 2vw;
-}
-
-.joeImg:hover {
   background-image: url('../img/joe_drink.jpg');
+  background-size: 160%;
+  background-position: center;
   width: 15vw;
-  height: 25vw;
-  border-radius: 10vw;
-  margin-right: 2vw;
-}
+  height: 20vw;
+  border-radius: 5vw;}
+
 
 .marshallImg {
-  background-image: url('../img/marshall.jpg');
-  background-size: 15vw 25vw;
+  background-image: url('../img/marshall_drink.jpg');
+  background-size: 160%;
+  background-position: center;
   width: 15vw;
-  height: 25vw;
-  border-radius: 10vw;
-  margin-right: 2vw;
+  height: 20vw;
+  border-radius: 5vw;
 }
 
-.marshallImg:hover {
-  background-image: url('../img/marshall_drink.jpg');
-  width: 15vw;
-  height: 25vw;
-  border-radius: 10vw;
-  margin-right: 2vw;
-}
 
 .kyleImg {
-  background-image: url('../img/kyle.jpg');
-  background-size: 15vw 25vw;
+  background-image: url('../img/kyle_drink.jpg');
+  background-size: 160%;
+  background-position: center;
   width: 15vw;
-  height: 25vw;
-  border-radius: 10vw;
-  margin-right: 2vw;
+  height: 20vw;
+  border-radius: 5vw;
 }
 
-.kyleImg:hover {
-  background-image: url('../img/kyle_drink.jpg');
-  width: 15vw;
-  height: 25vw;
-  border-radius: 10vw;
-  margin-right: 2vw;
-}
+
 
 .lisaText {
   width: 25vw;
