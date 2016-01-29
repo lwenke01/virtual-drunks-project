@@ -3,7 +3,7 @@ body {
 }
 
 .backgroundContainer {
-  background-image: url("../img/medwoodheader.jpg");
+  background-image: url("img/medwoodheader.jpg");
   background-size: cover;
 }
 
@@ -58,7 +58,7 @@ body {
 }
 
 .gameContainer {
-  background-image: url("../img/alc_background.jpg");
+  background-image: url("img/alc_background.jpg");
   height: 800px;
 }
 
