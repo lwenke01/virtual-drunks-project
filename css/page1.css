@@ -105,7 +105,7 @@ border:2px solid #f00;
 
 }
 .backgroundContainerMain {
-  background-image: url("img/medwoodheader.jpg");
+  background-image: url("../img/medwoodheader.jpg");
   background-size: cover;
   height: 25vw;
   display: flex;

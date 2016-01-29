@@ -4,7 +4,7 @@ body {
 }
 
 .backgroundContainer {
-  background-image: url("img/medwoodheader.jpg");
+  background-image: url("../img/medwoodheader.jpg");
   background-size: cover;
   min-height: 44vh;
   min-width: 44vw;
@@ -53,7 +53,7 @@ body {
 }
 
 .backgroundContainer {
-  background-image: url("img/medwoodheader.jpg");
+  background-image: url("../img/medwoodheader.jpg");
   background-size: cover;
   height: 25vw;
   display: flex;
