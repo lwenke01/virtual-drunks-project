@@ -1,6 +1,3 @@
-header {
-  max-height: 300px;
-}
 
 body {
   background-color: black;
@@ -105,9 +102,9 @@ body {
   height: 1500px;
 }
 
-.rulesFlexBox1 {
+/*.rulesFlexBox1 {
   margin-top: 12vw;
-}
+}*/
 
 .hemingway {
   position: absolute;
