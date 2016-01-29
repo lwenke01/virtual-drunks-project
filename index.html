@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet" type="text/css">
+  <link href="../css/page1.css" rel="stylesheet" type="text/css"/>
+  <!-- <link rel="stylesheet" href="../css/page1.css"> -->
+  <title>Homepage</title>
+</head>
+<body>
+  <header>
+    <div class="backgroundContainerMain">
+        <img class="logo" src="../img/logo3.png" />
+        <p class="slogan">A virtual drinking game</p>
+    </div>
+  </header>
+  <div class="container">
+    <nav>
+      <ul class="containerNav1">
+        <li><a href="index.html" class="current">Home</a></li>
+        <li><a href="rules.html" class="hvr-buzz">Rules</a></li>
+        <li><a href="aboutus.html" class="hvr-buzz">About us</a></li>
+      </ul>
+    </nav>
+    <div class="intro">
+      <h2 class="h2intro">Welcome to a game of HiLo!!! </h2>
+      <p class="pintro">Drink with a Cold One is a virtual drinking game that allows you do drink a cold one with a cold one! All you have to do to get started is pick your cold ones of choice and play a drinking game!
+    <form id="nameInsert"class="selectionform">
+      <div class="nameinput">
+        <h2 class="qname">What is your name?</h2>
+        <label for="nameField"></label>
+        <input type="text" class="textbox" size="15" name="nameField" id="nameField"/>
+      </div>
+      <br>
+      <section class="poison">
+        <h2 class="pick">Pick your poison</h2>
+        <div class="switch">
+          <input name="switch" id="one" type="radio" checked/>
+          <label for="one" class="switch__label">Beer</label>
+          <input name="switch" id="two" type="radio"/>
+          <label for="two" class="switch__label">Wine</label>
+          <input name="switch" id="three" type="radio"/>
+          <label for="three" class="switch__label" >Shots!!</label>
+          <input name="switch" id="four" type="radio" />
+          <label for="four" class="switch__label">Cider</label>
+          <input name="switch" id="five" type="radio" />
+          <label for="five" class="switch__label">Wine-cooler</label>
+          <input name="switch" id="six" type="radio" />
+          <label for="six" class="switch__label">Cocktail</label>
+          <input name="switch" id="seven" type="radio" />
+          <label for="seven" class="switch__label">Kool-aid</label>
+          <div class="switch__indicator" /></div>
+        </div>
+      </section>
+      <div class="pickpartner">
+        <h2 class="part1">Pick your partner</h2>
+        <div class="partnerselect">
+
+          <label for="pic1" class="partnerselect__label"><input name="partnerselect" id="pic1" type="radio" checked/><figcaption>Abe Lincoln</figcaption><img src="../img/abe2.png"></label>
+
+          <label for="pic2" class="partnerselect__label"><input name="partnerselect" id="pic2" type="radio"/><figcaption>Genghis Khan</figcaption><img src="../img/genghis.png"></label>
+
+          <label for="pic3" class="partnerselect__label"><input name="partnerselect" id="pic3" type="radio"/><figcaption>William Shakespeare</figcaption><img src="../img/shakes1.png"></label>
+
+          <label for="pic4" class="partnerselect__label">  <input name="partnerselect" id="pic4" type="radio"/><figcaption>Albert Einstein</figcaption><img src="../img/einsteinnormal.png"></label>
+
+          <label for="pic5" class="partnerselect__label"><input name="partnerselect" id="pic5" type="radio"/><figcaption>Napoleon</figcaption><img src="../img/napoleon2.png"></label>
+
+          <label for="pic6" class="partnerselect__label"><input name="partnerselect" id="pic6" type="radio"/><figcaption>Gandhi</figcaption><img src="../img/Gandhi.png"></label>
+
+          <label for="pic7" class="partnerselect__label"><input name="partnerselect" id="pic7" type="radio"/><figcaption>Mother Teresa</figcaption><img src="../img/teresa.png"></label>
+
+          <label for="pic8" class="partnerselect__label"><input name="partnerselect" id="pic8" type="radio"/><figcaption>Joan of Arc</figcaption><img src="../img/joan.png"></label>
+
+          <label for="pic9" class="partnerselect__label"><input name="partnerselect" id="pic9" type="radio"/><figcaption>Marie Antoinette</figcaption><img src="../img/marie2.png"></label>
+
+          <label for="pic10" class="partnerselect__label"><input name="partnerselect" id="pic10" type="radio"/><figcaption>Eleanor Roosevelt</figcaption><img src="../img/elro1.png"></label>
+
+
+        </div>
+        </div>
+        </section>
+        <br>
+    </div>
+  </form>
+  <div class="buttonContainer">
+    <a href="cardroom.html"><button class="button" id="button">Game On!</button></a>
+    <button class="clearLS" id="clearLS">Clear Local Storage</button>
+  </div>
+  <script src='frontpage.js'></script>
+</body>
+<!-- <footer>&copy Guzzler Games Enterprises 2016</footer> -->
+</html>
