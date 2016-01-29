@@ -14,26 +14,23 @@ body {
 }
 
 .logoContainer {
+  position: relative;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: -60px;
+  margin: 0px;
+  left: 2.6vw;
 }
 
 .logoContainer p {
-  font-size: 15vw;
+  position: relative;
+  top: 8.5vw;
+  left: -1vw;
+  font-size: 3vw;
   font-family: 'Amatic SC', cursive;
-  letter-spacing: 10px;
-  margin-bottom: 0.5vw;
-  margin-top: 0vw;
-  margin-bottom: 2vw;
-  color: darkred;
-  text-shadow:
-     3px 3px 0 white,
-     -1px -1px 0 white,
-     1px -1px 0 white,
-     -1px 1px 0 white,
-     1px 1px 0 white;
+  letter-spacing: 2px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(116, 125, 102, 1);
 }
 
 .sloganContainer {
@@ -54,27 +51,24 @@ body {
   margin-bottom: 1vw;
 }*/
 
-.containerNav {
+nav {
   display: flex;
-  list-style-type: none;
   justify-content: space-around;
-  flex-wrap: wrap;
   background-color: darkred;
-  border: 2px solid black;
-}
-
-.containerNav li a {
-  color: white;
-  text-decoration: none;
   font-size: 2.5vw;
   font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: #f0c078;
+  text-decoration: none;
 }
 
 .rulesContainer {
   flex-wrap: wrap;
   background-image: url("http://superretro.com/wp-content/uploads/2014/06/vSg8LG1.jpg");
   background-repeat: no-repeat;
-  height: 1400px;
+  height: 1500px;
 }
 
 .rulesFlexBox1 {
@@ -93,7 +87,7 @@ body {
   width: 40vw;
   height: auto;
   left: 8vw;
-  top: 20vw;
+  top: 28vw;
   /*-moz-transform: scaleX(-1);*/
   /*-o-transform: scaleX(-1);*/
   /*-webkit-transform: scaleX(-1);*/
@@ -107,7 +101,7 @@ body {
   position: absolute;
   z-index: 1;
   left: 15vw;
-  top: 21.5vw;
+  top: 29.6vw;
   width: 30vw;
   font-family: 'Vollkorn', serif;
   font-size: 1.1vw;
@@ -115,4 +109,53 @@ body {
 
 .rulesText p {
   text-align: center;
+}
+
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+.hvr-buzz {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-buzz:hover, .hvr-buzz:focus, .hvr-buzz:active, .hover-buzz{
+  -webkit-animation-name: hvr-buzz;
+  animation-name: hvr-buzz;
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  animation-fill-mode:
+}
+.hvr-buzz:hover {
+  color: #d86018;
 }
