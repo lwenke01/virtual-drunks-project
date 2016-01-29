@@ -239,7 +239,7 @@ function userPassPick () {
 function userIncorrectPick() {
   setTimeout(function(){
     computerDrinkCommand();
-    opponentID.src = allCharacters[charIndex].path[1];
+    // opponentID.src = allCharacters[charIndex].path[1];
     passButtonID.style.display = 'none';
     highButtonID.style.display = 'none';
     lowButtonID.style.display = 'none';
