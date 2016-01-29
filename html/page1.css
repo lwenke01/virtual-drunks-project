@@ -110,7 +110,7 @@ border:2px solid #f00;
 .container {
   /*margin-left: 20px;*/
   font-family: 'Montserrat', sans-serif;
-  background-image: url("../img/alc_background.jpg");
+  background-image: url("img/alc_background.jpg");
   background-size: cover;
 
 }

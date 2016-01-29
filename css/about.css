@@ -3,7 +3,7 @@ body {
 }
 
 .backgroundContainer {
-  background-image: url("../img/medwoodheader.jpg");
+  background-image: url("img/medwoodheader.jpg");
   background-size: cover;
   height: 25vw;
   display: flex;
@@ -149,7 +149,7 @@ body {
 }
 
 .lisaImg {
-  background-image: url('../img/lisa_drink.jpg');
+  background-image: url('img/lisa_drink.jpg');
   background-size: 120%;
   background-position: top center;
   width: 15vw;
@@ -159,7 +159,7 @@ body {
 
 
 .joeImg {
-  background-image: url('../img/joe_drink.jpg');
+  background-image: url('img/joe_drink.jpg');
   background-size: 160%;
   background-position: center;
   width: 15vw;
@@ -168,7 +168,7 @@ body {
 
 
 .marshallImg {
-  background-image: url('../img/marshall_drink.jpg');
+  background-image: url('img/marshall_drink.jpg');
   background-size: 160%;
   background-position: center;
   width: 15vw;
@@ -178,7 +178,7 @@ body {
 
 
 .kyleImg {
-  background-image: url('../img/kyle_drink.jpg');
+  background-image: url('img/kyle_drink.jpg');
   background-size: 160%;
   background-position: center;
   width: 15vw;
