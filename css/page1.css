@@ -219,7 +219,12 @@ body {
 
 .buttonContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.clearLS {
+  position: absolute;
+  right: 1vw;
 }
 
 /*below is tye slider style for drinks*/
