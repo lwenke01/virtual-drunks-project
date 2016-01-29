@@ -1,3 +1,5 @@
+
+
 #logo {
 border: none;
 }
@@ -9,11 +11,10 @@ margin-right: 0;
 }
 
 header {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-image: url(http://pre15.deviantart.net/0782/th/pre/i/2006/153/3/b/beer_label_background_by_rsteagall.jpg);
-  max-height: 260px;
+  background-image: url("../img/medwoodheader.jpg");
+  background-size: cover;
+  min-height: 44vh;
+  min-width: 44vw;
 }
 
 nav {
@@ -21,7 +22,6 @@ nav {
   display: flex;
   justify-content: space-around;
   background-color: darkred;
-  border: 2px solid black;
   margin: 0px;
   -webkit-text-stroke: 1px black;
  color: darkred;
@@ -89,7 +89,7 @@ footer {
 
 .bioJoe {
   position: absolute;
-  top: 57%;
+  top: 60%;
   left: 72%;
   font-size: 2.2vw;
 
@@ -101,7 +101,7 @@ footer {
 
 .bioLisa {
   position: absolute;
-  top: 57%;
+  top: 60%;
   left: 21%;
   right: 50%;
   font-size: 2.2vw;

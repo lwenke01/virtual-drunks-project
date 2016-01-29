@@ -1,3 +1,7 @@
+header {
+  max-height: 300px;
+}
+
 body {
   background-color: black;
 }
@@ -5,6 +9,8 @@ body {
 .backgroundContainer {
   background-image: url("../img/medwoodheader.jpg");
   background-size: cover;
+  min-height: 44vh;
+  min-width: 44vw;
 }
 
 .logoContainer {
@@ -54,8 +60,6 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
   background-color: darkred;
-  margin-top: 0;
-  margin-bottom: 0;
   border: 2px solid black;
 }
 
@@ -67,11 +71,10 @@ body {
 }
 
 .rulesContainer {
-  display: flex;
   flex-wrap: wrap;
   background-image: url("http://superretro.com/wp-content/uploads/2014/06/vSg8LG1.jpg");
   background-repeat: no-repeat;
-  height: 1800px;
+  height: 1400px;
 }
 
 .rulesFlexBox1 {
