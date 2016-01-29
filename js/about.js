@@ -14,5 +14,5 @@ function flip() {
 }
 
 function imgSwitch() {
-  
+
 };
